@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../assets/Logo/logo.png'; 
+import logo from '../assets/Logo/mainlogoV.png'; 
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -23,7 +23,7 @@ const Header = () => {
       <header className="fixed left-0 bg-black text-white top-0 w-full flex items-center h-20 border-b border-b-gray-100 z-40">
         <nav className="relative mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex gap-x-5 justify-between items-center">
           <div className="flex items-center min-w-max">
-            <img src={logo} alt="Grocy Mart Logo" className="h-16" /> {/* Use an img tag to display the logo */}
+            <img src={logo} alt="YouPrint logo" className="h-[180px]" /> 
           </div>
           <div
             className={`absolute top-full lg:translate-y-0 lg:opacity-100 left-0 bg-black border-b border-gray-200 py-8 lg:py-0 px-5 sm:px-10 md:px-12 lg:px-0 lg:border-none w-full lg:top-0 lg:relative lg:flex lg:justify-between duration-300 lg:transition-none ease-linear ${
@@ -78,7 +78,7 @@ const Header = () => {
               <div className="hidden lg:flex lg:items-center">
                 <a href="#" className="relative text-white px-1.5">
                   <span className="sr-only">cart</span>
-                  <span className="absolute top-0 right-0 bg-emerald-600 w-2 h-2 rounded-full" />
+                  <span className="absolute top-0 right-0 bg-primaryGreen w-2 h-2 rounded-full" />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={20}
