@@ -26,7 +26,7 @@ const Header = () => {
             <img src={logo} alt="YouPrint logo" className="h-[180px]" /> 
           </div>
           <div
-            className={`absolute top-full lg:translate-y-0 lg:opacity-100 left-0 bg-black border-b border-gray-200 py-8 lg:py-0 px-5 sm:px-10 md:px-12 lg:px-0 lg:border-none w-full lg:top-0 lg:relative lg:flex lg:justify-between duration-300 lg:transition-none ease-linear ${
+            className={`absolute top-full lg:translate-y-0 lg:opacity-100 left-0 bg-black border-b border-gray-200 lg:py-0 px-5 sm:px-10 md:px-12 lg:px-0 lg:border-none w-full lg:top-0 lg:relative lg:flex lg:justify-between duration-300 lg:transition-none ease-linear ${
               openNavbar
                 ? 'translate-y-0 rotate-0 opacity-100 visible'
                 : 'translate-y-10 -rotate-12 opacity-0 invisible lg:visible lg:rotate-0'
@@ -115,8 +115,7 @@ const Header = () => {
             <div className="flex items-center gap-x-4 lg:hidden">
               <a href="#" className="relative text-white px-1.5">
                 <span className="sr-only">cart</span>
-                <span className="absolute top-0 right-0 bg-emerald-600 w
-2 h-2 rounded-full" />
+                <span className="absolute top-0 right-0 bg-emerald-600 w2 h-2 rounded-full" />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width={20}
