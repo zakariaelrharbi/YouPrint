@@ -99,13 +99,13 @@ const Header = () => {
               </div>
               <a
                 href="#"
-                className="px-5 py-2.5 rounded-md text-white flex justify-center border border-primaryGreen duration-300 ease-linear hover:bg-primaryGreen hover:text-black"
+                className="px-5 py-2.5 rounded-md font-semibold text-white flex justify-center border border-primaryGreen duration-300 ease-linear hover:bg-primaryGreen hover:text-black"
               >
                 Signin
               </a>
               <a
                 href="#"
-                className="px-5 py-2.5 rounded-md bg-primaryGreen text-white flex justify-center duration-300 ease-linear hover:bg-primaryGreen"
+                className="px-5 py-2.5 rounded-md font-semibold bg-primaryGreen text-white flex justify-center duration-300 ease-linear hover:bg-opacity-80"
               >
                 Signup
               </a>
