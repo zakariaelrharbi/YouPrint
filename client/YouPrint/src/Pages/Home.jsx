@@ -5,7 +5,7 @@ import CategoryList from '../components/CategoryList'
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-NeutreSilver'>
       <CategoryList />
       <HeroSection />
       <Cards />
