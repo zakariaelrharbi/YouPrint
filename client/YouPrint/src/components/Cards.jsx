@@ -32,15 +32,15 @@ const Cards = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {CardData.map((data, index) => (
             <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-lg">
-              <div className="p-2">
-                <h3 className="text-xl font-bold text-gray-800 text-center">
+              <div className="">
+                <h3 className="text-xl font-bold text-gray-800 text-center mt-6">
                   {data.title}
                 </h3>
               </div>
               <img
                 src={data.img}
                 alt={data.title}
-                className="w-full  rounded-xl  p-2 object-cover"
+                className="w-full  rounded-xl object-cover h-[250px] mb-6 hover:scale-105 transition duration-300 ease-in-out cursor-pointer"
               />
             </div>
           ))}
