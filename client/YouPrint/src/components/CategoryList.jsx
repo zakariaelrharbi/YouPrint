@@ -54,13 +54,50 @@ const product = [
         image: img1,
         categorie: 'Card'
     },
+    {
+        image: img1,
+        categorie: 'Card'
+    },
+    {
+        image: img1,
+        categorie: 'Card'
+    },
+    {
+        image: img1,
+        categorie: 'Card'
+    },
+    {
+        image: img1,
+        categorie: 'Card'
+    },
+    {
+        image: img1,
+        categorie: 'Card'
+    },
+    {
+        image: img1,
+        categorie: 'Card'
+    },
+    {
+        image: img1,
+        categorie: 'Card'
+    },
+    {
+        image: img1,
+        categorie: 'Card'
+    },
+    {
+        image: img1,
+        categorie: 'Card'
+    },
+    
    
     ]
 
 const CategoryList = () => {
   return (
-    <div className='container mx-auto p-4 mt-[85px] '>
-            <div className='flex items-center gap-4 justify-around overflow-scroll no-scrollbar'>
+    <div className='container  pt-4 pb-4 mt-[85px] w-full md:w-full'>
+            <div className='flex items-center gap-4 justify-between overflow-scroll no-scrollbar md:w-full'>
                 {
                     product.map((item, index) => (
                         <div className=''>

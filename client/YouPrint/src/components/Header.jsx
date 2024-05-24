@@ -23,10 +23,12 @@ const Header = () => {
       <header className="fixed left-0 bg-black text-white  top-0 w-full flex items-center h-20 border-b border-b-gray-100 z-40">
         <nav className="relative mx-auto lg:max-w-full w-full px-5 sm:px-10 md:px-[90px] lg:px-[70px] flex gap-x-5 justify-between items-center">
           <div className="flex items-center min-w-max">
-            <img src={logo} alt="YouPrint logo" className="h-[180px]" /> 
+            <Link>
+              <img src={logo} alt="YouPrint logo" className="h-[180px]" /> 
+            </Link>
           </div>
           <div
-            className={`absolute top-full lg:translate-y-0 lg:opacity-100 left-0 bg-black border-b border-gray-200 lg:py-0 px-5 sm:px-10 md:px-12 lg:px-0 lg:border-none w-full lg:top-0 lg:relative lg:flex lg:justify-between duration-300 lg:transition-none ease-linear ${
+            className={`absolute top-full lg:translate-y-0 lg:opacity-100 left-0 bg-black lg:py-0 px-5 sm:px-10 md:px-12 lg:px-0 lg:border-none w-full lg:top-0 lg:relative lg:flex lg:justify-between duration-300 lg:transition-none ease-linear ${
               openNavbar
                 ? 'translate-y-0 rotate-0 opacity-100 visible'
                 : 'translate-y-10 -rotate-12 opacity-0 invisible lg:visible lg:rotate-0'
