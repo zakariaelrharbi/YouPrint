@@ -60,7 +60,7 @@ const product = [
 const CategoryList = () => {
   return (
     <div className='container mx-auto p-4 mt-[85px] '>
-            <div className='flex items-center gap-4 justify-around overflow-scroll'>
+            <div className='flex items-center gap-4 justify-around overflow-scroll no-scrollbar'>
                 {
                     product.map((item, index) => (
                         <div className=''>
