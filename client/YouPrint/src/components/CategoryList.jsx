@@ -96,7 +96,7 @@ const product = [
 
 const CategoryList = () => {
   return (
-    <div className='container  pt-4 pb-4 mt-[85px] w-full md:w-full'>
+    <div className='container  pt-4 pb-4 mt-[85px] w-full '>
             <div className='flex items-center gap-4 justify-between overflow-scroll no-scrollbar md:w-full'>
                 {
                     product.map((item, index) => (
