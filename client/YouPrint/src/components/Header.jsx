@@ -105,12 +105,12 @@ const Header = () => {
               >
                 Signin
               </a>
-              <a
+              <Link to={'/register'}
                 href="#"
                 className="px-5 py-2.5 rounded-md font-semibold bg-primaryGreen text-white flex justify-center duration-300 ease-linear hover:bg-opacity-80"
               >
                 Signup
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex items-center lg:hidden gap-x-4">
