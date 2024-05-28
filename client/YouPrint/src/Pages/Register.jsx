@@ -30,7 +30,7 @@ const Register = () => {
                         name="name"
                         type="text"
                         required=""
-                        className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-blue-500"
+                        className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
                         placeholder="Enter username"
                     />
                     <FaUserAlt className="w-4 h-4 absolute right-4" />
@@ -43,7 +43,7 @@ const Register = () => {
                         name="email"
                         type="email"
                         required=""
-                        className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-blue-500"
+                        className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
                         placeholder="Enter email"
                     />
                     <MdOutlineMailOutline className="w-4 h-4 absolute right-4" />
@@ -55,7 +55,7 @@ const Register = () => {
                     <input
                         name="password"
                         type={showPassword ? "text" : "password"}
-                        className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-blue-500"
+                        className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
                         placeholder="Enter password"
                     />
                     {
@@ -72,13 +72,13 @@ const Register = () => {
                     id="remember-me"
                     name="remember-me"
                     type="checkbox"
-                    className="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    className="h-4 w-4 shrink-0 text-primaryGreen  border-gray-300 rounded"
                     />
                     <label htmlFor="remember-me" className="ml-3 block text-sm">
                     I accept the{" "}
                     <a
                         href="javascript:void(0);"
-                        className="text-blue-600 font-semibold hover:underline ml-1"
+                        className="text-primaryGreen font-semibold hover:underline ml-1"
                     >
                         Terms and Conditions
                     </a>
@@ -88,27 +88,23 @@ const Register = () => {
                 <div className="!mt-10">
                 <button
                     type="button"
-                    className="w-full py-3 px-4 text-sm font-semibold rounded text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
+                    className="w-full py-3 px-4 text-sm font-semibold rounded text-white bg-primaryGreen hover:opacity-90 focus:outline-none"
                 >
                     Create an account
                 </button>
                 </div>
                 <p className="text-sm mt-6 text-center">
                 Already have an account?{" "}
-                <a
+                <Link to="/login" 
                     href="javascript:void(0);"
-                    className="text-blue-600 font-semibold hover:underline ml-1"
+                    className="text-primaryGreen font-semibold hover:underline ml-1"
                 >
                     Login here
-                </a>
+                </Link>
                 </p>
             </form>
             </div>
         </div>
-        <img
-            src="https://readymadeui.com/bg-effect.svg"
-            className="absolute inset-0 w-full h-full z-0 opacity-40"
-        />
         </div>
 
     </div>
