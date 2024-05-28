@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleLeft } from "react-icons/fa6";
 
+import img1 from '../assets/Banner/1.jpg';
+import img2 from '../assets/Banner/2.jpg';
+import img3 from '../assets/Banner/3.jpg';
 
 
 import image1 from '../assets/Banner/img1.webp'
@@ -20,9 +23,9 @@ const BannerProduct = () => {
     const [currentImage, setCurrentImage] = useState(0)
 
     const desktopImages = [
-        image1,
-        image2,
-        image3,
+        img1,
+        img2,
+        img3,
         image4,
         image5,
     ]
