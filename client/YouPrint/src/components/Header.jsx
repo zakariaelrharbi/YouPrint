@@ -99,12 +99,12 @@ const Header = () => {
                     </svg>
                 </a>
               </div>
-              <a
-                href="#"
+              <Link
+                to={'/login'}
                 className="px-5 py-2.5 rounded-md font-semibold text-white flex justify-center border border-primaryGreen duration-300 ease-linear hover:bg-primaryGreen hover:text-black"
               >
                 Signin
-              </a>
+              </Link>
               <Link to={'/register'}
                 href="#"
                 className="px-5 py-2.5 rounded-md font-semibold bg-primaryGreen text-white flex justify-center duration-300 ease-linear hover:bg-opacity-80"

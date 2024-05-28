@@ -29,7 +29,7 @@ const Login = () => {
                         name="email"
                         type="email"
                         required=""
-                        className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
+                        className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen "
                         placeholder="Enter email"
                     />
                     <MdOutlineMailOutline className="w-4 h-4 absolute right-4" />
@@ -81,7 +81,7 @@ const Login = () => {
                 </div>
                 <p className="text-sm mt-6 text-center">
                 Don't have an account?{" "}
-                <Link to="/login" 
+                <Link to="/register" 
                     href="javascript:void(0);"
                     className="text-primaryGreen font-semibold hover:underline ml-1"
                 >
