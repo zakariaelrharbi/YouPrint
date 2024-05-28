@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { FaUserAlt } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
-
-
-import logo from '../assets/Logo/mainlogoV.png'; 
 import { Link } from 'react-router-dom';
 
 const Register = () => {
@@ -72,7 +69,7 @@ const Register = () => {
                     id="remember-me"
                     name="remember-me"
                     type="checkbox"
-                    className="h-4 w-4 shrink-0 text-primaryGreen  border-gray-300 rounded"
+                    className="h-4 w-4 shrink-0 text-primaryGreen focus:ring-primaryGreen border-gray-300 rounded"
                     />
                     <label htmlFor="remember-me" className="ml-3 block text-sm">
                     I accept the{" "}
