@@ -12,12 +12,16 @@ const Login = () => {
       setShowPassword(!showPassword);
     };
 
+     const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
   return (
     <div>
       <div className="font-[sans-serif] text-[#333] mt-28 p-4 relative">
         <div className="max-w-md w-full mx-auto relative z-50">
             <div className="border border-gray-300 bg-white rounded-md p-8">
-            <form className="w-full">
+            <form className="w-full" onSubmit={handleSubmit}>
                 <div className="mb-6 text-center">
                 <h3 className="text-2xl font-extrabold">Log in to your account</h3>
                 </div>

@@ -10,12 +10,28 @@ const Register = () => {
         setShowPassword(!showPassword);
     };
 
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+
+        const data = await fetch('http://localhost:5000/api/v1/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: e.target.name.value,
+                email: e.target.email.value,
+                password: e.target.password.value
+            })
+        });
+    }
+
   return (
     <div>
         <div className="font-[sans-serif] text-[#333] mt-28 p-4 relative">
         <div className="max-w-md w-full mx-auto relative z-50">
             <div className="border border-gray-300 bg-white rounded-md p-8">
-            <form className="w-full">
+            <form className="w-full" onSubmit={handleSubmit}>
                 <div className="mb-6 text-center">
                 <h3 className="text-2xl font-extrabold">Create an account</h3>
                 </div>
