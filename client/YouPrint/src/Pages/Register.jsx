@@ -4,7 +4,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import SummaryApi from '../common';
-import { toast } from 'react-toastify';
+import { Toaster, toast } from 'sonner'
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -41,11 +41,13 @@ const Register = () => {
         const dataRes = await dataResponse.json();
         console.log(dataRes);
 
-        
-        
-            toast.success(dataRes.message);
-        
-            toast.error(dataRes.message);
+      
+        if (dataRes.success) {
+            return toast.success('Account created successfully');
+        }
+       if (dataRes.error) {
+            return toast.error(dataRes.message);
+        }
     };
 
     return (
