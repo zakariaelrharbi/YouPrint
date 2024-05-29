@@ -39,6 +39,7 @@ const Register = () => {
             },
             body: JSON.stringify(data),
         });
+        console.log("summaryApi", SummaryApi.Register.url);
 
         const dataRes = await dataResponse.json();
         console.log("dataRes", dataRes);

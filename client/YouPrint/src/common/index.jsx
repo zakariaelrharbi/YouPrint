@@ -2,7 +2,7 @@
 const backendDomain = 'http://localhost:5000'
 
 const SummaryApi = {
-    signUp : {
+    Register : {
         url: `${backendDomain}/api/signup`,
         method: 'POST'
     }
