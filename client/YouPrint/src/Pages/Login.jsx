@@ -12,6 +12,19 @@ const Login = () => {
       setShowPassword(!showPassword);
     };
 
+    const handleOnChange = (e) => {
+        const { name, value } = e.target
+
+        setData((prevData) => {
+          return {
+            ...prevData,
+            [name]: value,
+          }
+        })
+    }
+    console.log("data",data);
+
+
      const handleSubmit = (e) => {
         e.preventDefault();
     }
@@ -32,7 +45,8 @@ const Login = () => {
                     <input
                         name="email"
                         type="email"
-                        required=""
+                        value={data.email}
+                        onChange={handleOnChange}
                         className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen "
                         placeholder="Enter email"
                     />
@@ -44,6 +58,8 @@ const Login = () => {
                     <div className="relative flex items-center">
                     <input
                         name="password"
+                        onChange={handleOnChange}
+                        value={data.password}
                         type={showPassword ? "text" : "password"}
                         className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
                         placeholder="Enter password"
@@ -67,7 +83,7 @@ const Login = () => {
                 </label>
               </div>
               <div>
-                <a href="jajvascript:void(0);" class="text-sm text-primaryGreen hover:opacity-90">
+                <a href="#" class="text-sm text-primaryGreen hover:opacity-90">
                   Forgot Password?
                 </a>
               </div>
@@ -86,7 +102,6 @@ const Login = () => {
                 <p className="text-sm mt-6 text-center">
                 Don't have an account?{" "}
                 <Link to="/register" 
-                    href="javascript:void(0);"
                     className="text-primaryGreen font-semibold hover:underline ml-1"
                 >
                     Register here

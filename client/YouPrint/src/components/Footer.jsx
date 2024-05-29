@@ -94,7 +94,7 @@ const Footer = () => {
         </p>
         <div className="flex mt-4 space-x-4 justify-center lg:justify-start sm:mt-0 ">
           <a
-            href="javascript:;"
+            href="#"
             className="w-9 h-9 rounded-full bg-indigo-600 flex justify-center items-center hover:bg-indigo-600"
           >
             <svg
@@ -115,7 +115,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="javascript:;"
+            href="#"
             className="w-9 h-9 rounded-full bg-indigo-600 flex justify-center items-center hover:bg-indigo-600"
           >
             <svg
@@ -131,7 +131,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="javascript:;"
+            href="#"
             className="w-9 h-9 rounded-full bg-indigo-600 flex justify-center items-center hover:bg-indigo-600"
           >
             <svg
@@ -147,7 +147,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="javascript:;"
+            href="#"
             className="w-9 h-9 rounded-full bg-indigo-600 flex justify-center items-center hover:bg-indigo-600"
           >
             <svg
@@ -172,7 +172,7 @@ const Footer = () => {
         <ul className="text-sm  transition-all duration-500">
           <li className="mb-6">
             <a
-              href="javascript:;"
+              href="#"
               className="text-gray-600 hover:text-gray-900"
             >
               Home
@@ -180,7 +180,7 @@ const Footer = () => {
           </li>
           <li className="mb-6">
             <a
-              href="javascript:;"
+              href="#"
               className=" text-gray-600 hover:text-gray-900"
             >
               About
@@ -188,7 +188,7 @@ const Footer = () => {
           </li>
           <li className="mb-6">
             <a
-              href="javascript:;"
+              href="#"
               className=" text-gray-600 hover:text-gray-900"
             >
               Pricing
@@ -196,7 +196,7 @@ const Footer = () => {
           </li>
           <li>
             <a
-              href="javascript:;"
+              href="#"
               className=" text-gray-600 hover:text-gray-900"
             >
               Features
@@ -210,7 +210,7 @@ const Footer = () => {
         <ul className="text-sm  transition-all duration-500">
           <li className="mb-6">
             <a
-              href="javascript:;"
+              href="#"
               className="text-gray-600 hover:text-gray-900"
             >
               Figma UI System
@@ -218,7 +218,7 @@ const Footer = () => {
           </li>
           <li className="mb-6">
             <a
-              href="javascript:;"
+              href="#"
               className=" text-gray-600 hover:text-gray-900"
             >
               Icons Assets
@@ -226,7 +226,7 @@ const Footer = () => {
           </li>
           <li className="mb-6">
             <a
-              href="javascript:;"
+              href="#"
               className=" text-gray-600 hover:text-gray-900"
             >
               Responsive Blocks
@@ -234,7 +234,7 @@ const Footer = () => {
           </li>
           <li>
             <a
-              href="javascript:;"
+              href="#"
               className=" text-gray-600 hover:text-gray-900"
             >
               Components Library
@@ -248,7 +248,7 @@ const Footer = () => {
         <ul className="text-sm  transition-all duration-500">
           <li className="mb-6">
             <a
-              href="javascript:;"
+              href="#"
               className="text-gray-600 hover:text-gray-900"
             >
               FAQs
@@ -256,7 +256,7 @@ const Footer = () => {
           </li>
           <li className="mb-6">
             <a
-              href="javascript:;"
+              href="#"
               className=" text-gray-600 hover:text-gray-900"
             >
               Quick Start
@@ -264,7 +264,7 @@ const Footer = () => {
           </li>
           <li className="mb-6">
             <a
-              href="javascript:;"
+              href="#"
               className=" text-gray-600 hover:text-gray-900"
             >
               Documentation
@@ -272,7 +272,7 @@ const Footer = () => {
           </li>
           <li>
             <a
-              href="javascript:;"
+              href="#"
               className=" text-gray-600 hover:text-gray-900"
             >
               User Guide
@@ -286,7 +286,7 @@ const Footer = () => {
         <ul className="text-sm  transition-all duration-500">
           <li className="mb-6">
             <a
-              href="javascript:;"
+              href="#"
               className="text-gray-600 hover:text-gray-900"
             >
               News
@@ -294,7 +294,7 @@ const Footer = () => {
           </li>
           <li className="mb-6">
             <a
-              href="javascript:;"
+              href="#"
               className=" text-gray-600 hover:text-gray-900"
             >
               Tips &amp; Tricks
@@ -302,7 +302,7 @@ const Footer = () => {
           </li>
           <li className="mb-6">
             <a
-              href="javascript:;"
+              href="#"
               className=" text-gray-600 hover:text-gray-900"
             >
               New Updates
@@ -310,7 +310,7 @@ const Footer = () => {
           </li>
           <li>
             <a
-              href="javascript:;"
+              href="#"
               className=" text-gray-600 hover:text-gray-900"
             >
               Events
@@ -327,17 +327,17 @@ const Footer = () => {
         </span>
         <ul className="flex items-center gap-9 mt-4 lg:mt-0">
           <li>
-            <a href="javascript:;" className="text-sm text-gray-500">
+            <a href="#" className="text-sm text-gray-500">
               Terms
             </a>
           </li>
           <li>
-            <a href="javascript:;" className="text-sm text-gray-500">
+            <a href="#" className="text-sm text-gray-500">
               Privacy
             </a>
           </li>
           <li>
-            <a href="javascript:;" className="text-sm text-gray-500">
+            <a href="#" className="text-sm text-gray-500">
               Cookies
             </a>
           </li>
