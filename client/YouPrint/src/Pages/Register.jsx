@@ -3,6 +3,7 @@ import { FaUserAlt } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import SummaryApi from '../common';
 
 const Register = () => {
@@ -23,26 +24,36 @@ const Register = () => {
         }));
     };
 
-    console.log("data", data);
-
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log("Submit clicked"); // Add this line
 
-        const dataResponse = await fetch(SummaryApi.Register.url, {
-            method: SummaryApi.Register.method,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-        console.log("summaryApi", SummaryApi.Register.url);
+        try {
+            const dataResponse = await fetch(SummaryApi.Register.url, {
+                method: SummaryApi.Register.method,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
 
-        const dataRes = await dataResponse.json();
-        console.log("dataRes", dataRes);
+            const dataRes = await dataResponse.json();
+            console.log("Response received", dataRes); // Add this line
+
+            if (dataRes.success) {
+                toast.success(dataRes.message);
+                console.log("Success toast called"); // Add this line
+            } else if (dataRes.error) {
+                toast.error(dataRes.message);
+                console.log("Error toast called"); // Add this line
+            }
+        } catch (error) {
+            toast.error('Failed to register. Please try again.');
+        }
     };
 
     return (
@@ -106,13 +117,14 @@ const Register = () => {
                                         id="remember-me"
                                         name="remember-me"
                                         type="checkbox"
-                                        onChange={(e)=> setTermsAccepted(e.target.checked)}
+                                        onChange={(e) => setTermsAccepted(e.target.checked)}
                                         className="h-4 w-4 shrink-0 text-primaryGreen focus:ring-primaryGreen border-gray-300 rounded"
                                     />
                                     <label htmlFor="remember-me" className="ml-3 block text-sm">
                                         I accept the{" "}
                                         <a
                                             href="#"
+                                            onClick={(e) => e.preventDefault()}
                                             className="text-primaryGreen font-semibold hover:underline ml-1"
                                         >
                                             Terms and Conditions
