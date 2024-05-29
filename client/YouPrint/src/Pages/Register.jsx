@@ -3,9 +3,16 @@ import { FaUserAlt } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import SummaryApi from '../common';
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const [data, setData] = useState({
+        username: '',
+        email: '',
+        password: '',
+    });
+
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
@@ -13,17 +20,16 @@ const Register = () => {
     const handleSubmit = async(e) => {
         e.preventDefault();
 
-        const data = await fetch('http://localhost:5000/api/v1/auth/register', {
-            method: 'POST',
+        const dataResponse = await fetch(SummaryApi.Register.url, {
+            method: SummaryApi.Register.method,
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                name: e.target.name.value,
-                email: e.target.email.value,
-                password: e.target.password.value
-            })
+            body: JSON.stringify(data),
         });
+     
+        const dataRes = await dataResponse.json();
+        console.log("dataRes",dataRes);
     }
 
   return (
