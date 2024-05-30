@@ -21,11 +21,15 @@ const userSignup = async (req, res) => {
                 message: 'User already exists',
                 error: true,
                 success: false,
-             });
+            });
         }
-
         const hashedPassword = bcrypt.hashSync(password, 10);
-        const newUser = new User({ username, email, password: hashedPassword });
+        const payload = {
+            ...req.body,
+            role: 'GENERAL',
+            password: hashedPassword,
+        };
+        const newUser = new User(payload);
 
         await newUser.save();
         res.status(201).json({
@@ -35,10 +39,11 @@ const userSignup = async (req, res) => {
         });
 
     } catch (error) {
-        res.json({ message: error,
+        res.json({
+            message: error.message || 'Internal Server Error',
             error: true,
             success: false,
-         });
+        });
     }
 };
 
