@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { FaUserAlt } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SummaryApi from '../common';
-import { Toaster, toast } from 'sonner'
+import { toast } from 'sonner'
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -13,6 +13,8 @@ const Register = () => {
         email: '',
         password: '',
     });
+
+    const navigate = useNavigate();
 
     const [termsAccepted, setTermsAccepted] = useState(false);
 
@@ -42,12 +44,14 @@ const Register = () => {
         console.log(dataRes);
 
       
-        if (dataRes.success) {
-            return toast.success('Account created successfully');
-        }
-       if (dataRes.error) {
-            return toast.error(dataRes.message);
-        }
+    if (dataRes.success) {
+        toast.success(dataRes.message);
+        setTimeout(() => {
+            navigate('/login');
+        }, 1500);  // Adjust the delay time (2000 ms = 2 seconds) as needed
+    } else if (dataRes.error) {
+        toast.error(dataRes.message);
+    }
     };
 
     return (
