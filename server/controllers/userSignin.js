@@ -24,16 +24,21 @@ const userSignin = async (req, res) => {
                 success: false,
              });
         } else {
-            res.status(200).json({
-                message: 'User Login successfully',
-                error: false,
-                success: true,
-            });
             const tokenData = {
                 _id: user._id,
                 email: user.email,
             };
             const token = await jwt.sign(tokenData, process.env.JWT_SECRET, { expiresIn: '1d' });
+            const tokenOptions = {
+                httpOnly: true,
+                secure: true,
+            };
+            res.cookie('token', token, tokenOptions).status(200).json({
+                message: 'User Login successfully',
+                data: token,
+                error: false,
+                success: true,
+            });
         }
 
         console.log(chekedPassword);
