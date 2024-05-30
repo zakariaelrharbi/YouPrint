@@ -13,7 +13,22 @@ const userSignin = async (req, res) => {
         if (!user) {
             return res.status(400).json({ message: 'User not found' });
         }
-        const chekedPassword = bcrypt.compareSync(password, user.password);
+        const chekedPassword = await bcrypt.compare(password, user.password);
+        if (!chekedPassword) {
+            return res.status(400).json({ 
+                message: 'Invalid password',
+                error: true,
+                success: false,
+             });
+        } else {
+            res.status(200).json({
+                message: 'User Login successfully',
+                error: false,
+                success: true,
+            });
+        }
+
+        console.log(chekedPassword);
     } catch (error) {
          res.json({
             message: error.message || 'Internal Server Error',
