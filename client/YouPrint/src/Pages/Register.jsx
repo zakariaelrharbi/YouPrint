@@ -41,7 +41,6 @@ const Register = () => {
             body: JSON.stringify(data),
         });
         const dataRes = await dataResponse.json();
-        console.log(dataRes);
 
       
     if (dataRes.success) {

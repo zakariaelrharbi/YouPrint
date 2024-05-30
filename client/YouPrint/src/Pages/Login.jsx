@@ -29,7 +29,6 @@ const Login = () => {
           }
         })
     }
-    console.log("data",data);
 
 
      const handleSubmit = async (e) => {
