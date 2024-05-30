@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'sonner';
+import SummaryApi from '../common';
 
 
 const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+    const [data, setData] = useState({
+        email: "",
+        password: "",
+    });
+
     const togglePasswordVisibility = () => {
       setShowPassword(!showPassword);
     };
@@ -24,8 +32,27 @@ const Login = () => {
     console.log("data",data);
 
 
-     const handleSubmit = (e) => {
+     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const dataResponse = await fetch(SummaryApi.Login.url, {
+            method: SummaryApi.Login.method,
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+        const dataRes = await dataResponse.json();
+
+        if (dataRes.success) {
+            toast.success(dataRes.message);
+            setTimeout(() => {
+                navigate('/');
+            }, 1500);  // Adjust the delay time (2000 ms = 2 seconds) as needed
+        } else if (dataRes.error) {
+            toast.error(dataRes.message);
+        }
     }
 
   return (
@@ -74,15 +101,15 @@ const Login = () => {
                 </div>
 
 
-                <div class="flex items-center justify-between gap-4">
-              <div class="flex items-center">
-                <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 shrink-0 text-primaryGreen focus:ring-primaryGreen border-gray-300 rounded" />
-                <label for="remember-me" class="ml-3 block text-sm">
+                <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center">
+                <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 shrink-0 text-primaryGreen focus:ring-primaryGreen border-gray-300 rounded" />
+                <label for="remember-me" className="ml-3 block text-sm">
                   Remember me
                 </label>
               </div>
               <div>
-                <a href="#" class="text-sm text-primaryGreen hover:opacity-90">
+                <a href="#" className="text-sm text-primaryGreen hover:opacity-90">
                   Forgot Password?
                 </a>
               </div>
@@ -92,7 +119,7 @@ const Login = () => {
                 </div>
                 <div className="!mt-10">
                 <button
-                    type="button"
+                    type="submit"
                     className="w-full py-3 px-4 text-sm font-semibold rounded text-white bg-primaryGreen hover:opacity-90 focus:outline-none"
                 >
                     Login

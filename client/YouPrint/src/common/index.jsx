@@ -5,6 +5,10 @@ const SummaryApi = {
     Register : {
         url: `${backendDomain}/api/signup`,
         method: 'POST'
+    },
+     Login: {
+        url: `${backendDomain}/api/signin`,
+        method: 'POST'
     }
 };
 export default SummaryApi;
