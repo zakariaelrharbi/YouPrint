@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   return (
     <>
-    <Toaster  richColors />
+    <Toaster  richColors position="top-center"/>
     <Header />
       <main>
         <Outlet />

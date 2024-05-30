@@ -13,7 +13,7 @@ const Login = () => {
     };
 
     const handleOnChange = (e) => {
-        const { name, value } = e.target
+    const { name, value } = e.target
 
         setData((prevData) => {
           return {
@@ -32,7 +32,7 @@ const Login = () => {
   return (
     <div>
       <div className="font-[sans-serif] text-[#333] mt-28 p-4 relative">
-        <div className="max-w-md w-full mx-auto relative z-50">
+        <div className="max-w-md w-full mx-auto relative z-30">
             <div className="border border-gray-300 bg-white rounded-md p-8">
             <form className="w-full" onSubmit={handleSubmit}>
                 <div className="mb-6 text-center">
