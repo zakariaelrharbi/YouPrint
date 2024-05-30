@@ -1,6 +1,8 @@
 const User = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
+
 const userSignin = async (req, res) => {
     try {
         const  { email, password } = req.body;
@@ -27,6 +29,11 @@ const userSignin = async (req, res) => {
                 error: false,
                 success: true,
             });
+            const tokenData = {
+                _id: user._id,
+                email: user.email,
+            };
+            const token = await jwt.sign(tokenData, process.env.JWT_SECRET, { expiresIn: '1d' });
         }
 
         console.log(chekedPassword);

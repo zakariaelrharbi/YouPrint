@@ -3,12 +3,14 @@ const dotenv = require("dotenv");
 const connect = require('./config/database');
 const cors = require('cors');
 const router = require('./routes/index');
+const cookieParser = require('cookie-parser');
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/api', router);
+app.use(cookieParser());
 
 
 const PORT = process.env.SERVER_PORT || 5000;
