@@ -43,7 +43,7 @@ const userSignin = async (req, res) => {
 
         console.log(chekedPassword);
     } catch (error) {
-         res.status(400).json({
+         res.json({
             message: error.message || 'Internal Server Error',
             error: true,
             success: false,
