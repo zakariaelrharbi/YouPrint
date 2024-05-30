@@ -22,3 +22,4 @@ const userSignin = async (req, res) => {
         });
     }
 }
+module.exports = userSignin;
