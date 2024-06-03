@@ -21,7 +21,7 @@ const Header = () => {
         aria-hidden="true"
         className={`fixed bg-black inset-0 z-30 ${openNavbar ? 'flex lg:hidden' : 'hidden'}`}
       />
-      <header className="fixed left-0 bg-black text-white  top-0 w-full flex items-center h-20 border-b border-b-gray-100 z-40">
+      <header className="fixed left-0 bg-black text-white  top-0 w-full flex items-center h-20 border-b border-b-gray-100 z-30">
         <nav className="relative mx-auto lg:max-w-full w-full px-5 sm:px-10 md:px-[90px] lg:px-[70px] flex gap-x-5 justify-between items-center">
           <div className="flex items-center min-w-max">
             <Link>

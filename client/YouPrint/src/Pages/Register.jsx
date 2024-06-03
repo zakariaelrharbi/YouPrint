@@ -22,7 +22,7 @@ const Register = () => {
         const { name, value } = e.target;
         setData((prevData) => ({
             ...prevData,
-            [name]: value,
+            [name]: value.trim(),
         }));
     };
     
@@ -33,24 +33,25 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const dataResponse = await fetch(SummaryApi.Register.url, {
-            method: SummaryApi.Register.method,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-        const dataRes = await dataResponse.json();
-
-      
-    if (dataRes.success) {
-        toast.success(dataRes.message);
-        setTimeout(() => {
-            navigate('/login');
-        }, 1500);  // Adjust the delay time (2000 ms = 2 seconds) as needed
-    } else if (dataRes.error) {
-        toast.error(dataRes.message);
-    }
+        
+            const dataResponse = await fetch(SummaryApi.Register.url, {
+                method: SummaryApi.Register.method,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            const dataRes = await dataResponse.json();
+    
+          
+        if (dataRes.success) {
+            toast.success(dataRes.message);
+            setTimeout(() => {
+                navigate('/login');
+            }, 1500);  // Adjust the delay time (2000 ms = 2 seconds) as needed
+        } else if (dataRes.error) {
+            toast.error(dataRes.message);
+        }
     };
 
     return (
@@ -86,7 +87,7 @@ const Register = () => {
                                             value={data.email}
                                             onChange={handleOnChange}
                                             className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
-                                            placeholder="Enter email"
+                                            placeholder="name@gmail.com"
                                         />
                                         <MdOutlineMailOutline className="w-4 h-4 absolute right-4" />
                                     </div>
@@ -100,7 +101,7 @@ const Register = () => {
                                             value={data.password}
                                             type={showPassword ? "text" : "password"}
                                             className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
-                                            placeholder="Enter password"
+                                            placeholder="********"
                                         />
                                         {showPassword ? (
                                             <FaRegEyeSlash onClick={togglePasswordVisibility} className="w-4 h-4 absolute right-4 cursor-pointer" />

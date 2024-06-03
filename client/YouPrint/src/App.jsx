@@ -1,22 +1,20 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import { Toaster, toast } from 'sonner'
-import 'react-toastify/dist/ReactToastify.css';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { Toaster } from 'sonner'; // Ensure you're using 'sonner' consistently
 
 const App = () => {
   return (
     <>
-    <Toaster  richColors position="top-center"/>
-    <Header />
+      <Toaster richColors position="top-center" />
+      <Header />
       <main>
         <Outlet />
       </main>
-    <Footer />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;
