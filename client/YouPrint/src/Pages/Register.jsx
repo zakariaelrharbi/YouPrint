@@ -5,6 +5,7 @@ import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
 import SummaryApi from '../common';
 import { toast } from 'sonner'
+import GOGOauth from '../components/GOGOauth';
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -137,6 +138,7 @@ const Register = () => {
                                 >
                                     Create an account
                                 </button>
+                                <GOGOauth />
                             </div>
                             <p className="text-sm mt-6 text-center">
                                 Already have an account?{" "}

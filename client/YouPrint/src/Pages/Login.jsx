@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 import SummaryApi from '../common';
 import { useDispatch, useSelector } from 'react-redux';
 import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
+import GOGOauth from '../components/GOGOauth';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -139,10 +140,10 @@ const Login = () => {
                             <button
                                 type="submit"
                                 className='w-full py-3 px-4 text-sm font-semibold rounded text-white bg-primaryGreen hover:opacity-90 focus:outline-none'
-                                
                             >
                                Login
                             </button>
+                            <GOGOauth/>
                         </div>
                         <p className="text-sm mt-6 text-center">
                             Don't have an account?{" "}
