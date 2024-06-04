@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import logo from '../assets/Logo/mainlogoV.png'; 
 import { SlBasket } from "react-icons/sl";
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Avatar, Dropdown } from "flowbite-react";
 
 const Header = () => {
   const [openNavbar, setOpenNavbar] = useState(false);
-
+  
   const toggleNavbar = () => {
     setOpenNavbar((prevOpenNavbar) => !prevOpenNavbar);
   };
-
+  
   const closeNavbar = () => {
     setOpenNavbar(false);
   };
+  const { currentUser } = useSelector((state) => state.user);
 
   return (
     <>
@@ -21,10 +24,10 @@ const Header = () => {
         aria-hidden="true"
         className={`fixed bg-black inset-0 z-40 ${openNavbar ? 'flex lg:hidden' : 'hidden'}`}
       />
-      <header className="fixed left-0 bg-black text-white  top-0 w-full flex items-center h-20 border-b border-b-gray-100 z-40">
+      <header className="fixed left-0 bg-black text-white top-0 w-full flex items-center h-20 border-b border-b-gray-100 z-40">
         <nav className="relative mx-auto lg:max-w-full w-full px-5 sm:px-10 md:px-[90px] lg:px-[70px] flex gap-x-5 justify-between items-center">
           <div className="flex items-center min-w-max">
-            <Link>
+            <Link to="/">
               <img src={logo} alt="YouPrint logo" className="h-[180px]" /> 
             </Link>
           </div>
@@ -84,28 +87,58 @@ const Header = () => {
                   <span className="absolute -top-2 right-0 bg-primaryGreen w-2 h-2 rounded-full" />
                   <SlBasket className='w-6 h-6' />
                 </a>
+                {currentUser && (
+                  <Dropdown 
+                    arrowIcon={false} 
+                    inline
+                    label={
+                      <Avatar
+                        alt='user'
+                        img={currentUser.profilePicture}
+                        rounded
+                      />
+                    }
+                  >
+                    <Dropdown.Header>
+                      <span className="block text-sm">@{currentUser.username}</span>
+                    </Dropdown.Header>
+                  </Dropdown>
+                )}
               </div>
-              <Link
-                to={'/login'}
-                className="px-5 py-2.5 rounded-md font-semibold text-white flex justify-center border border-primaryGreen duration-300 ease-linear hover:bg-primaryGreen hover:text-black"
-              >
-                Signin
-              </Link>
-              <Link to={'/register'}
-                href="#"
-                className="px-5 py-2.5 rounded-md font-semibold bg-primaryGreen text-white flex justify-center duration-300 ease-linear hover:bg-opacity-80"
-              >
-                Signup
-              </Link>
             </div>
           </div>
+          {!currentUser && (
+            <Link
+              to={'/login'}
+              className="px-5 py-2.5 rounded-md font-semibold text-white flex justify-center border border-primaryGreen duration-300 ease-linear hover:bg-primaryGreen hover:text-black"
+            >
+              Signin
+            </Link>
+          )}
           <div className="flex items-center lg:hidden gap-x-4">
             <div className="flex items-center gap-x-4 lg:hidden">
               <a href="#" className="relative text-white px-1.5">
                 <span className="sr-only">cart</span>
-                <span className="absolute top-0 right-0 bg-emerald-600 w2 h-2 rounded-full" />
+                <span className="absolute top-0 right-0 bg-emerald-600 w-2 h-2 rounded-full" />
                 <SlBasket className='w-6 h-6' />
               </a>
+              {currentUser && (
+                <Dropdown 
+                  arrowIcon={false} 
+                  inline
+                  label={
+                    <Avatar
+                      alt='user'
+                      img={currentUser.profilePicture}
+                      rounded
+                    />
+                  }
+                >
+                  <Dropdown.Header>
+                    <span className="block text-sm">@{currentUser.username}</span>
+                  </Dropdown.Header>
+                </Dropdown>
+              )}
               <div className="flex">
                 <button
                   onClick={toggleNavbar}
