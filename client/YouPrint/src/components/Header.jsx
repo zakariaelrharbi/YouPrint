@@ -3,6 +3,7 @@ import logo from '../assets/Logo/mainlogoV.png';
 import { SlBasket } from "react-icons/sl";
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
 import { Avatar, Dropdown } from "flowbite-react";
 
 const Header = () => {
@@ -16,6 +17,7 @@ const Header = () => {
     setOpenNavbar(false);
   };
   const { currentUser } = useSelector((state) => state.user);
+  console.log(currentUser);
 
   return (
     <>
@@ -94,13 +96,13 @@ const Header = () => {
                     label={
                       <Avatar
                         alt='user'
-                        img={currentUser.profilePicture}
+                        img={currentUser.user.profilePicture}
                         rounded
                       />
                     }
                   >
                     <Dropdown.Header>
-                      <span className="block text-sm">@{currentUser.username}</span>
+                      <span className="block text-sm">@{currentUser.displayName}</span>
                     </Dropdown.Header>
                   </Dropdown>
                 )}
