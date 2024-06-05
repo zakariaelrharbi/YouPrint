@@ -118,8 +118,13 @@ const Header = () => {
                        {/* Display the username */}
                       <span className="block text-sm">@{user.username}</span> 
                       {/*  Display the email */}
-                      <span className="block text-xs text-gray-400">{user.email}</span> 
+                      <span className="block text-xs font-medium truncate">{user.email}</span> 
                     </Dropdown.Header>
+                    <Link to="/dashboard?tab=profile" className="block text-sm">
+                      <Dropdown.Item>Profile</Dropdown.Item>
+                    </Link>
+                    <Dropdown.Divider />
+                    <Dropdown.Item>Sign out</Dropdown.Item>
                   </Dropdown>
                 )}
               </div>
@@ -162,8 +167,13 @@ const Header = () => {
                     {/* Display the username */}
                     <span className="block text-sm">@{user.username}</span> 
                     {/*  Display the email */}
-                    <span className="block text-xs text-gray-400">{user.email}</span> 
+                    <span className="block text-xs font-medium  truncate">{user.email}</span> 
                   </Dropdown.Header>
+                  <Link to="/dashboard?tab=profile" className="block text-sm">
+                      <Dropdown.Item>Profile</Dropdown.Item>
+                  </Link>
+                  <Dropdown.Divider />
+                  <Dropdown.Item>Sign out</Dropdown.Item>
                 </Dropdown>
               )}
               {/* Container for navbar toggle button */}
