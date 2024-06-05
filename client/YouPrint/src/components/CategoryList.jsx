@@ -71,8 +71,8 @@ const CategoryList = () => {
     <div className='container  pt-4 pb-4 mt-[85px] w-full '>
             <div className='flex items-center gap-[19px] justify-around overflow-scroll no-scrollbar md:w-min md:ml-20 '>
                 {
-                    product.map((item, index) => (
-                        <div className=''>
+                    product.map((item) => (
+                        <div >
                             <div className='w-16 h-16 md:w-20 md:h-20  p-4 bg-slate-200 rounded-full overflow-hidden shadow-md flex items-center justify-center'>
                                 <img src={item.image} alt='product' className='h-full object-scale-down mix-blend-multiply hover:scale-125 transition-all' />
                             </div>

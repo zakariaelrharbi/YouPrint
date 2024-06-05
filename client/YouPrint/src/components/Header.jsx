@@ -3,7 +3,6 @@ import logo from '../assets/Logo/mainlogoV.png';
 import { SlBasket } from "react-icons/sl";
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
 import { Avatar, Dropdown } from "flowbite-react";
 
 const Header = () => {
@@ -16,8 +15,11 @@ const Header = () => {
   const closeNavbar = () => {
     setOpenNavbar(false);
   };
-  const { currentUser } = useSelector((state) => state.user);
-  console.log(currentUser);
+  
+  const { currentUser } = useSelector((state) => state.user); // Access the user state from Redux
+  const user = currentUser?.user; // Access the nested user object
+
+  console.log("Current User:", user);
 
   return (
     <>
@@ -89,27 +91,28 @@ const Header = () => {
                   <span className="absolute -top-2 right-0 bg-primaryGreen w-2 h-2 rounded-full" />
                   <SlBasket className='w-6 h-6' />
                 </a>
-                {currentUser && (
+                {user && (
                   <Dropdown 
                     arrowIcon={false} 
                     inline
                     label={
                       <Avatar
                         alt='user'
-                        img={currentUser.user.profilePicture}
+                        img={user.profilePicture}
                         rounded
                       />
                     }
                   >
                     <Dropdown.Header>
-                      <span className="block text-sm">@{currentUser.displayName}</span>
+                      <span className="block text-sm">@{user.username}</span>
+                      <span className="block text-xs text-gray-400">{user.email}</span>
                     </Dropdown.Header>
                   </Dropdown>
                 )}
               </div>
             </div>
           </div>
-          {!currentUser && (
+          {!user && (
             <Link
               to={'/login'}
               className="px-5 py-2.5 rounded-md font-semibold text-white flex justify-center border border-primaryGreen duration-300 ease-linear hover:bg-primaryGreen hover:text-black"
@@ -124,20 +127,21 @@ const Header = () => {
                 <span className="absolute top-0 right-0 bg-emerald-600 w-2 h-2 rounded-full" />
                 <SlBasket className='w-6 h-6' />
               </a>
-              {currentUser && (
+              {user && (
                 <Dropdown 
                   arrowIcon={false} 
                   inline
                   label={
                     <Avatar
                       alt='user'
-                      img={currentUser.profilePicture}
+                      img={user.profilePicture}
                       rounded
                     />
                   }
                 >
                   <Dropdown.Header>
-                    <span className="block text-sm">@{currentUser.username}</span>
+                    <span className="block text-sm">@{user.username}</span>
+                    <span className="block text-xs text-gray-400">{user.email}</span>
                   </Dropdown.Header>
                 </Dropdown>
               )}
