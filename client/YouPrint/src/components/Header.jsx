@@ -19,8 +19,6 @@ const Header = () => {
   const { currentUser } = useSelector((state) => state.user); // Access the currentUser from the Redux store
   const user = currentUser?.user; // Access the nested user object if it exists
 
-  console.log("Current User:", user); // Log the current user to the console
-
   return (
     <>
       <div
@@ -41,7 +39,8 @@ const Header = () => {
             </Link>
           </div>
           <div
-            className={`absolute top-full lg:translate-y-0 lg:opacity-100 left-0 bg-black lg:py-0 px-5 sm:px-10 md:px-12 lg:px-0 lg:border-none w-full lg:top-0 lg:relative lg:flex lg:justify-between duration-300 lg:transition-none ease-linear ${
+            className={`absolute top-full lg:translate-y-0 lg:opacity-100 left-0 bg-black lg:py-0 px-5 sm:px-10 md:px-12 lg:px-0 lg:border-none w-full lg:top-0 lg:relative lg:flex lg:justify-between duration-300 lg:transition-none ease-linear
+             ${
               openNavbar
                 ? 'translate-y-0 rotate-0 opacity-100 visible'
                 : 'translate-y-10 -rotate-12 opacity-0 invisible lg:visible lg:rotate-0'
@@ -143,7 +142,7 @@ const Header = () => {
                 {/* Screen reader text for cart */}
                 <span className="sr-only">cart</span> 
                 {/* Notification dot on the cart icon */}
-                <span className="absolute top-0 right-0 bg-emerald-600 w-2 h-2 rounded-full" /> 
+                <span className="absolute -top-2 right-0 bg-primaryGreen w-2 h-2  rounded-full" /> 
                  {/* Basket icon */}
                 <SlBasket className='w-6 h-6' /> 
               </a>
