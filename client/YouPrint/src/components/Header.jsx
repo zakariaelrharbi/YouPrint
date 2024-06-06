@@ -88,13 +88,37 @@ const Header = () => {
                   Contact
                 </a>
               </li>
+                {user ? (
+                          <li className="">
+                          </li>
+                              ) : (
+                                  <li className="lg:hidden">
+                                      <Link
+                                    to={'/login'}
+                                    className="relative px-60  lg:px-6 py-2.5 rounded-md font-semibold text-white duration-300 ease-linear after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-0 hover:after:scale-100 bg-transparent border border-primaryGreen hover:bg-primaryGreen
+                                    hover:text-black"
+                                >
+                                    Signin
+                                </Link>
+
+                                  </li>
+                              )}
             </ul>
              {/*  Container for additional elements like cart and user profile */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 lg:min-w-max mt-10 lg:mt-0">
               {/* Container for cart icon and user profile on large screens */}
               <div className="hidden lg:flex lg:items-center"> 
+                {!user && ( 
+                  <Link
+                    to={'/login'}
+                    className="relative px-6 py-2.5 rounded-md font-semibold text-white duration-300 ease-linear after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-0 hover:after:scale-100 bg-transparent border border-primaryGreen hover:bg-primaryGreen
+                    hover:text-black"
+                  >
+                    Signin
+                  </Link>
+                )}
                 {/* Cart link */}
-                <a href="#" className="relative text-white px-1.5"> 
+                <a href="#" className="relative text-white px-1.5 ml-4"> 
                  {/* Screen reader text for cart */}
                   <span className="sr-only">cart</span> 
                    {/*  Notification dot on the cart icon */}
@@ -130,14 +154,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-          {!user && ( // Check if user is not logged in
-            <Link
-              to={'/login'}
-              className="px-5 py-2.5 rounded-md font-semibold text-white flex justify-center border border-primaryGreen duration-300 ease-linear hover:bg-primaryGreen hover:text-black" 
-            >
-              Signin
-            </Link>
-          )}
+          
           {/*  Container for cart icon and user profile on small screens */}
           <div className="flex items-center lg:hidden gap-x-4"> 
             {/* Container for cart icon and user profile on small screens */}
