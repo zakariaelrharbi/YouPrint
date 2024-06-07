@@ -145,6 +145,23 @@ const google = async (req, res) => {
 
 
 const userSignout = (req, res) => {
+  try {
+    res
+      .clearCookie('access_token')
+      .status(200)
+      .json({
+        message: 'Signout successful',
+        error: false,
+        success: true,
+      });
+  } catch (error) {
+    return res.status(500).json({
+      message: 'Server error',
+      error: true,
+      success: false,
+    });
+  }
 };
+
 
 module.exports = { userSignup, userSignin, google, userSignout };
