@@ -10,5 +10,6 @@ const SummaryApi = {
         url: `${backendDomain}/api/signin`,
         method: 'post'
     },
+    
 };
 export default SummaryApi;

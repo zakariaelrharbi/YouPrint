@@ -2,11 +2,14 @@ import React, { useState } from 'react'; // Import React and the useState hook f
 import logo from '../assets/Logo/mainlogoV.png'; // Import the logo image
 import { SlBasket } from "react-icons/sl"; // Import the basket icon from react-icons
 import { Link } from 'react-router-dom'; // Import Link component from react-router-dom for navigation
-import { useSelector } from 'react-redux'; // Import useSelector hook from react-redux to access the Redux store
+import { useSelector, useDispatch } from 'react-redux'; // Import useSelector hook from react-redux to access the Redux store
 import { Avatar, Dropdown } from "flowbite-react"; // Import Avatar and Dropdown components from flowbite-react
+import { signOutSuccess } from '../redux/user/userSlice';
+import {toast} from 'sonner'; // Import the toast function from sonner for displaying notifications
 
 const Header = () => {
   const [openNavbar, setOpenNavbar] = useState(false); // State to manage the visibility of the navbar
+  const dispatch = useDispatch(); // Access the dispatch function from the Redux store
 
   const toggleNavbar = () => {
     setOpenNavbar((prevOpenNavbar) => !prevOpenNavbar); // Function to toggle the navbar visibility
@@ -18,6 +21,27 @@ const Header = () => {
 
   const { currentUser } = useSelector((state) => state.user); // Access the currentUser from the Redux store
   const user = currentUser?.user; // Access the nested user object if it exists
+
+  // handle signout
+ const handleSignout = async() => {
+  // signout user
+  try {
+    const res = await fetch('http://localhost:5000/api/signout', {
+      method: 'POST',
+    });
+    const dataRes = await res.json();
+    if (!res.ok) {
+      toast.error(dataRes.message);
+      console.log(dataRes.message);
+    } else {
+      toast.success(dataRes.message);
+      dispatch(signOutSuccess());
+    }
+  } catch (error) {
+    console.error('Error signing out:', error);
+  }
+}
+
 
   return (
     <>
@@ -148,7 +172,7 @@ const Header = () => {
                       <Dropdown.Item>Profile</Dropdown.Item>
                     </Link>
                     <Dropdown.Divider />
-                    <Dropdown.Item>Sign out</Dropdown.Item>
+                    <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
                   </Dropdown>
                 )}
               </div>
@@ -190,7 +214,7 @@ const Header = () => {
                       <Dropdown.Item>Profile</Dropdown.Item>
                   </Link>
                   <Dropdown.Divider />
-                  <Dropdown.Item>Sign out</Dropdown.Item>
+                  <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
                 </Dropdown>
               )}
               {/* Container for navbar toggle button */}
