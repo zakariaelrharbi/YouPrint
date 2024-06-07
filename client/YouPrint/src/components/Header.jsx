@@ -41,8 +41,8 @@ const Header = () => {
       toast.error('An error occurred. Please try again');
     }
   };
-
-  const handleSigninClick = (path) => {
+  // this function close the navbar and navigate to the path page
+  const handleCloseMenuClick = (path) => {
     closeNavbar(); // Close the navbar
     navigate(path); // Navigate to the signin page
   };
@@ -78,7 +78,7 @@ const Header = () => {
             <ul className="flex flex-col lg:flex-row gap-6 lg:items-center text-white lg:w-full lg:justify-center">
               <li>
                 <Link
-                  onClick={()=>{handleSigninClick('/')}}
+                  onClick={()=>{handleCloseMenuClick('/')}}
                   className="relative py-2.5 duration-300 ease-linear hover:text-primaryGreen after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-x-0 hover:after:scale-100 after:bg-primaryGreen"
                 >
                   Home
@@ -86,7 +86,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  onClick={()=>{handleSigninClick('/')}}
+                  onClick={()=>{handleCloseMenuClick('/')}}
                   className="relative py-2.5 duration-300 ease-linear hover:text-primaryGreen after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-x-0 hover:after:scale-100 after:bg-primaryGreen"
                 >
                   Categories
@@ -94,7 +94,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  onClick={()=>{handleSigninClick('/')}}
+                  onClick={()=>{handleCloseMenuClick('/')}}
                   className="relative py-2.5 duration-300 ease-linear hover:text-primaryGreen after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-x-0 hover:after:scale-100 after:bg-primaryGreen"
                 >
                   Sales
@@ -102,7 +102,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  onClick={()=>{handleSigninClick('/')}}
+                  onClick={()=>{handleCloseMenuClick('/')}}
                   className="relative py-2.5 duration-300 ease-linear hover:text-primaryGreen after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-x-0 hover:after:scale-100 after:bg-primaryGreen"
                 >
                   About
@@ -110,7 +110,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  onClick={()=>{handleSigninClick('/')}}
+                  onClick={()=>{handleCloseMenuClick('/')}}
                   className="relative py-2.5 duration-300 ease-linear hover:text-primaryGreen after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-x-0 hover:after:scale-100 after:bg-primaryGreen"
                 >
                   Contact
@@ -121,7 +121,7 @@ const Header = () => {
               ) : (
                 <li className="lg:hidden">
                   <button
-                    onClick={()=>{handleSigninClick('/login')}}
+                    onClick={()=>{handleCloseMenuClick('/login')}}
                     className="relative px-60 lg:px-6 py-2.5 rounded-md font-semibold text-white duration-300 ease-linear after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-0 hover:after:scale-100 bg-transparent border border-primaryGreen hover:bg-primaryGreen hover:text-black"
                   >
                     Signin
