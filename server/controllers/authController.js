@@ -143,4 +143,8 @@ const google = async (req, res) => {
     }
 };
 
-module.exports = { userSignup, userSignin, google };
+
+const userSignout = (req, res) => {
+};
+
+module.exports = { userSignup, userSignin, google, userSignout };
