@@ -1,5 +1,5 @@
 import { Button } from 'flowbite-react';
-import { AiFillGoogleCircle } from "react-icons/ai";
+import { FcGoogle } from "react-icons/fc";
 import React from 'react';
 import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth';
 import { app } from '../firebase';
@@ -43,10 +43,16 @@ const GOGOauth = () => {
     }
 
     return (
-        <Button outline type='button' className='mt-2 w-full font-semibold ' onClick={handleGoogleClick}>
-            <AiFillGoogleCircle className='w-6 h-6 mr-2' />
-            Continue with Google
-        </Button>
+        <button type="button"
+            onClick={handleGoogleClick}
+            className="w-full px-4 py-2 mt-4 flex items-center justify-center rounded-md text-[#333] text-base tracking-wider font-semibold border border-primaryGreen outline-none  hover:bg-gray-50">
+            <FcGoogle  className='w-6 h-6 mr-2 inline' />
+              Continue with Google
+            </button>
+        // <Button outline type='button' className='mt-2 w-full font-semibold ' onClick={handleGoogleClick}>
+        //     <AiFillGoogleCircle className='w-6 h-6 mr-2' />
+        //     Continue with Google
+        // </Button>
     );
 };
 
