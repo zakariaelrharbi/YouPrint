@@ -57,16 +57,16 @@ const Register = () => {
 
     return (
         <div>
-            <div className="font-[sans-serif] text-[#333] mt-28 p-4 relative">
+            <div className="font-[sans-serif] text-[#333] mt-24 mb-4 p-4 relative">
                 <div className="max-w-md w-full mx-auto relative z-30">
                     <div className="border border-gray-300 bg-white rounded-md p-8">
                         <form className="w-full" onSubmit={handleSubmit}>
                             <div className="mb-6 text-center">
-                                <h3 className="text-2xl font-extrabold">Create an account</h3>
+                                <h3 className="text-2xl font-extrabold">Créez votre compte</h3>
                             </div>
                             <div className="space-y-6">
                                 <div>
-                                    <label className="text-sm mb-2 block">Username</label>
+                                    <label className="text-sm mb-1 block">Identifiant<span className='text-red-500'> *</span></label>
                                     <div className="relative flex items-center">
                                         <input
                                             name="username"
@@ -74,13 +74,13 @@ const Register = () => {
                                             value={data.username}
                                             onChange={handleOnChange}
                                             className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
-                                            placeholder="Enter username"
+                                            placeholder="Nom complet"
                                         />
                                         <FaUserAlt className="w-4 h-4 absolute right-4" />
                                     </div>
                                 </div>
                                 <div>
-                                    <label className="text-sm mb-2 block">Email</label>
+                                    <label className="text-sm mb-1 block">E-mail<span className='text-red-500'> *</span></label>
                                     <div className="relative flex items-center">
                                         <input
                                             name="email"
@@ -88,13 +88,13 @@ const Register = () => {
                                             value={data.email}
                                             onChange={handleOnChange}
                                             className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
-                                            placeholder="name@gmail.com"
+                                            placeholder="nom@gmail.com"
                                         />
                                         <MdOutlineMailOutline className="w-4 h-4 absolute right-4" />
                                     </div>
                                 </div>
                                 <div>
-                                    <label className="text-sm mb-2 block">Password</label>
+                                    <label className="text-sm mb-1 block">Mot de passe<span className='text-red-500'> *</span></label>
                                     <div className="relative flex items-center">
                                         <input
                                             name="password"
@@ -120,12 +120,12 @@ const Register = () => {
                                         className="h-4 w-4 shrink-0 text-primaryGreen focus:ring-primaryGreen border-gray-300 rounded"
                                     />
                                     <label htmlFor="remember-me" className="ml-3 block text-sm">
-                                        I accept the{" "}
+                                        J'accepte les{" "}
                                         <a
                                             href="#"
                                             className="text-primaryGreen font-semibold hover:underline ml-1"
                                         >
-                                            Terms and Conditions
+                                        Conditions de service
                                         </a>
                                     </label>
                                 </div>
@@ -136,14 +136,14 @@ const Register = () => {
                                     disabled={!termsAccepted}
                                     className="w-full py-3 px-4 text-sm font-semibold rounded text-white bg-primaryGreen hover:scale-105 focus:outline-none cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                                 >
-                                    Create an account
+                                    S'inscrire
                                 </button>
                                 <GOGOauth />
                             </div>
                             <p className="text-sm mt-6 text-center">
-                                Already have an account?{" "}
+                                Vous avez un compte ?{" "}
                                 <Link to="/login" className="text-primaryGreen font-semibold hover:underline ml-1">
-                                    Login here
+                                    Se connecter
                                 </Link>
                             </p>
                         </form>

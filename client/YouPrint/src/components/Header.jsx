@@ -124,7 +124,7 @@ const Header = () => {
                     onClick={()=>{handleCloseMenuClick('/login')}}
                     className="relative px-60 lg:px-6 py-2.5 rounded-md font-semibold text-white duration-300 ease-linear after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-0 hover:after:scale-100 bg-transparent border border-primaryGreen hover:bg-primaryGreen hover:text-black"
                   >
-                    Signin
+                    Se connecter
                   </button>
                 </li>
               )}
@@ -136,9 +136,9 @@ const Header = () => {
                 {!user && (
                   <Link
                     to={'/login'}
-                    className="relative px-6 py-2.5 rounded-md font-semibold text-white duration-300 ease-linear after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-0 hover:after:scale-100 bg-transparent border border-primaryGreen hover:bg-primaryGreen hover:text-black"
+                    className="relative px-3 py-2.5 rounded-md font-semibold text-white duration-300 ease-linear after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-0 hover:after:scale-100 bg-transparent border border-primaryGreen hover:bg-primaryGreen hover:text-black"
                   >
-                    Signin
+                    Se connecter
                   </Link>
                 )}
                 {/* Cart link */}
@@ -171,7 +171,7 @@ const Header = () => {
                     </Link>
                     <Dropdown.Divider />
                     <Dropdown.Item onClick={handleSignout}>
-                      Sign out
+                      Se déconnecter
                     </Dropdown.Item>
                   </Dropdown>
                 )}
@@ -213,7 +213,7 @@ const Header = () => {
                   </Link>
                   <Dropdown.Divider />
                   <Dropdown.Item onClick={handleSignout}>
-                    Sign out
+                    Se déconnecter
                   </Dropdown.Item>
                 </Dropdown>
               )}

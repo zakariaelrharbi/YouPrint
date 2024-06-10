@@ -77,16 +77,16 @@ const Login = () => {
     }
 
     return (
-        <div className="font-[sans-serif] text-[#333] mt-28 p-4 relative">
+        <div className="font-[sans-serif] text-[#333] mt-24 p-4 relative mb-4">
             <div className="max-w-md w-full mx-auto relative z-30">
                 <div className="border border-gray-300 bg-white rounded-md p-8">
                     <form className="w-full" onSubmit={handleSubmit}>
                         <div className="mb-6 text-center">
-                            <h3 className="text-2xl font-extrabold">Log in to your account</h3>
+                            <h3 className="text-2xl font-extrabold">Connectez-vous</h3>
                         </div>
                         <div className="space-y-6">
                             <div>
-                                <label className="text-sm mb-2 block">Email</label>
+                                <label className="text-sm mb-2 block">E-mail<span className='text-red-500'> *</span></label>
                                 <div className="relative flex items-center">
                                     <input
                                         name="email"
@@ -94,13 +94,13 @@ const Login = () => {
                                         value={data.email}
                                         onChange={handleOnChange}
                                         className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
-                                        placeholder="name@gmail.com"
+                                        placeholder="nom@gmail.com"
                                     />
                                     <MdOutlineMailOutline className="w-4 h-4 absolute right-4" />
                                 </div>
                             </div>
                             <div>
-                                <label className="text-sm mb-2 block">Password</label>
+                                <label className="text-sm mb-2 block">Mot de passe<span className='text-red-500'> *</span></label>
                                 <div className="relative flex items-center">
                                     <input
                                         name="password"
@@ -118,20 +118,10 @@ const Login = () => {
                                 </div>
                             </div>
                             <div className="flex items-center justify-between gap-4">
-                                <div className="flex items-center">
-                                    <input
-                                        id="remember-me"
-                                        name="remember-me"
-                                        type="checkbox"
-                                        className="h-4 w-4 shrink-0 text-primaryGreen focus:ring-primaryGreen border-gray-300 rounded"
-                                    />
-                                    <label htmlFor="remember-me" className="ml-3 block text-sm">
-                                        Remember me
-                                    </label>
-                                </div>
+                                
                                 <div>
                                     <a href="#" className="text-sm text-primaryGreen underline hover:opacity-90">
-                                        Forgot Password?
+                                        Mot de passe oublié ?
                                     </a>
                                 </div>
                             </div>
@@ -141,14 +131,14 @@ const Login = () => {
                                 type="submit"
                                 className='w-full py-3 px-4 text-sm font-semibold rounded text-white bg-primaryGreen hover:opacity-90 focus:outline-none'
                             >
-                               Login
+                               Se connecter
                             </button>
                             <GOGOauth/>
                         </div>
                         <p className="text-sm mt-6 text-center">
-                            Don't have an account?{" "}
+                           Vous n'avez pas de compte ?{" "}
                             <Link to="/register" className="text-primaryGreen font-semibold hover:underline ml-1">
-                                Register here
+                                S'inscrire
                             </Link>
                         </p>
                     </form>

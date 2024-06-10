@@ -47,7 +47,7 @@ const GOGOauth = () => {
             onClick={handleGoogleClick}
             className="w-full px-4 py-2 mt-4 flex items-center justify-center rounded-md text-[#333] text-base tracking-wider font-semibold border border-primaryGreen outline-none  hover:bg-gray-50">
             <FcGoogle  className='w-6 h-6 mr-2 inline' />
-              Continue with Google
+              Continue avec Google
             </button>
         // <Button outline type='button' className='mt-2 w-full font-semibold ' onClick={handleGoogleClick}>
         //     <AiFillGoogleCircle className='w-6 h-6 mr-2' />
