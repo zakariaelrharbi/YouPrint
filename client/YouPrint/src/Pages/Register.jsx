@@ -6,6 +6,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import SummaryApi from '../common';
 import { toast } from 'sonner'
 import GOGOauth from '../components/GOGOauth';
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
