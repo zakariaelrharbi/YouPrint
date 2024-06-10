@@ -16,6 +16,9 @@ const Register = () => {
         email: '',
         password: '',
     });
+    function onChange() {
+  
+    }
 
     const navigate = useNavigate();
 
@@ -131,8 +134,12 @@ const Register = () => {
                                         </a>
                                     </label>
                                 </div>
+                                <ReCAPTCHA
+                                    sitekey="Your client site key"
+                                    onChange={onChange}
+                                />
                             </div>
-                            <div className="!mt-10">
+                            <div className="!mt-5">
                                 <button
                                     type="submit"
                                     disabled={!termsAccepted}
