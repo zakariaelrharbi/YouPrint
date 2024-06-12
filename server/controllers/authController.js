@@ -164,8 +164,34 @@ const userSignout = (req, res) => {
 };
 
 
+const ForgotPassword = async (req, res) => {
+    const { email } = req.body;
+    try {
+        const ExistUser = await User.findOne({ email });
+        if (!ExistUser) {
+            return res.status(400).json({
+                message: 'Email not found',
+                error: true,
+                success: false,
+            });
+        }
+        const secret = process.env.JWT_SECRET + ExistUser.password;
+        const token = jwt.sign({ email: ExistUser.email, id:ExistUser._id }, secret, { expiresIn: '5m' });
+        const link = `http://localhost:3000/reset-password/${ExistUser._id}/${token}`;
+        console.log(link);
+        }
+        catch (error) {
+            return res.status(500).json({
+                message: 'Server error',
+                error: true,
+                success: false,
+            });
+        }
+}
 const ResetPassword = async (req, res) => {
+    const { id, token } = req.params;
+    console.log(req.params);
 }
 
 
-module.exports = { userSignup, userSignin, google, userSignout, ResetPassword };
+module.exports = { userSignup, userSignin, google, userSignout, ForgotPassword, ResetPassword };
