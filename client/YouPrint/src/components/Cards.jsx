@@ -20,6 +20,22 @@ const CardData = [
     title: "Lorem Ipsum Dolor",
     img: "https://readymadeui.com/cardImg.webp",
   },
+  {
+    title: "Lorem Ipsum Dolor",
+    img: img1,
+  },
+  {
+    title: "Lorem Ipsum Dolor",
+    img: img1,
+  },
+  {
+    title: "Lorem Ipsum Dolor",
+    img: "https://readymadeui.com/cardImg.webp",
+  },
+  {
+    title: "Lorem Ipsum Dolor",
+    img: "https://readymadeui.com/cardImg.webp",
+  },
 ];
 
 const Cards = () => {
