@@ -27,7 +27,7 @@ const Cards = () => {
     <div className="bg-gray-100 md:px-10 px-4 py-12 font-[sans-serif]">
       <div className="container mx-auto">
         <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-8">
-          Categories
+          Meilleures ventes
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {CardData.map((data, index) => (

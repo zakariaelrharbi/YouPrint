@@ -1,3 +1,4 @@
+// Import the TermsModal component here
 import React, { useState } from 'react';
 import { FaUserAlt } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
@@ -7,18 +8,17 @@ import SummaryApi from '../common';
 import { toast } from 'sonner'
 import GOGOauth from '../components/GOGOauth';
 import ReCAPTCHA from "react-google-recaptcha";
-
+import { TermsModal } from '../components/TermsModal';
 
 const Register = () => {
+    const [termsModalOpen, setTermsModalOpen] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
+    const [capValue, setCapValue] = useState(null);
     const [data, setData] = useState({
         username: '',
         email: '',
         password: '',
     });
-    function onChange() {
-  
-    }
 
     const navigate = useNavigate();
 
@@ -31,7 +31,15 @@ const Register = () => {
             [name]: value.trim(),
         }));
     };
-    
+
+    const openModal = () => {
+        setTermsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setTermsModalOpen(false);
+    };
+
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
@@ -39,22 +47,20 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        
-            const dataResponse = await fetch(SummaryApi.Register.url, {
-                method: SummaryApi.Register.method,
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-            const dataRes = await dataResponse.json();
-    
-          
+        const dataResponse = await fetch(SummaryApi.Register.url, {
+            method: SummaryApi.Register.method,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+        const dataRes = await dataResponse.json();
+
         if (dataRes.success) {
             toast.success(dataRes.message);
             setTimeout(() => {
                 navigate('/login');
-            }, 1500);  // Adjust the delay time (2000 ms = 2 seconds) as needed
+            }, 1500);  
         } else if (dataRes.error) {
             toast.error(dataRes.message);
         }
@@ -126,23 +132,23 @@ const Register = () => {
                                     />
                                     <label htmlFor="remember-me" className="ml-3 block text-sm">
                                         J'accepte les{" "}
-                                        <a
-                                            href="#"
+                                        <Link
                                             className="text-primaryGreen font-semibold hover:underline ml-1"
+                                            onClick={openModal}
                                         >
                                         Conditions de service
-                                        </a>
+                                        </Link>
                                     </label>
                                 </div>
                                 <ReCAPTCHA
-                                    sitekey="Your client site key"
-                                    onChange={onChange}
+                                    sitekey="6LcFRPUpAAAAALq44ZPeUzr6E0AMxpDhxac_1ejE"
+                                    onChange={(val)=> setCapValue(val)}
                                 />
                             </div>
                             <div className="!mt-5">
                                 <button
                                     type="submit"
-                                    disabled={!termsAccepted}
+                                    disabled={!termsAccepted || !capValue}
                                     className="w-full py-3 px-4 text-sm font-semibold rounded text-white bg-primaryGreen hover:scale-105 focus:outline-none cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                                 >
                                     S'inscrire
@@ -159,6 +165,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
+            {termsModalOpen && <TermsModal onClose={closeModal} />}
         </div>
     );
 };

@@ -72,7 +72,7 @@ const BannerProduct = () => {
             {/* desktop and tablet version */}
             <div className='hidden md:flex h-full w-full overflow-hidden '>
                 {
-                    desktopImages.map((imageURL, index) => {
+                    desktopImages.map((imageURL) => {
                         return (
                             <div className='w-full h-full min-h-full min-w-full transition-all' key={imageURL} style={{transform : `translateX(-${currentImage * 100}%)`}}> 
                                 <img src={imageURL} className='w-full h-full'/>
@@ -85,7 +85,7 @@ const BannerProduct = () => {
             {/* Mobile version */}
             <div className='flex h-full w-full overflow-hidden md:hidden'>
                 {
-                    mobileImages.map((imageURL, index) => {
+                    mobileImages.map((imageURL) => {
                         return (
                             <div className='w-full h-full min-h-full min-w-full transition-all' key={imageURL} style={{transform : `translateX(-${currentImage * 100}%)`}}> 
                                 <img src={imageURL} className='w-full h-full '/>

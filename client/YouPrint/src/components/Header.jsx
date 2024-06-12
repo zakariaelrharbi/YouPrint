@@ -89,7 +89,7 @@ const Header = () => {
                   onClick={()=>{handleCloseMenuClick('/')}}
                   className="relative py-2.5 duration-300 ease-linear hover:text-primaryGreen after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-x-0 hover:after:scale-100 after:bg-primaryGreen"
                 >
-                  Categories
+                  Carte de visite
                 </Link>
               </li>
               <li>
@@ -97,7 +97,7 @@ const Header = () => {
                   onClick={()=>{handleCloseMenuClick('/')}}
                   className="relative py-2.5 duration-300 ease-linear hover:text-primaryGreen after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-x-0 hover:after:scale-100 after:bg-primaryGreen"
                 >
-                  Sales
+                  Flayer
                 </Link>
               </li>
               <li>
@@ -105,7 +105,7 @@ const Header = () => {
                   onClick={()=>{handleCloseMenuClick('/')}}
                   className="relative py-2.5 duration-300 ease-linear hover:text-primaryGreen after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-x-0 hover:after:scale-100 after:bg-primaryGreen"
                 >
-                  About
+                  Affiches
                 </Link>
               </li>
               <li>

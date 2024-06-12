@@ -1,4 +1,3 @@
-import { Button } from 'flowbite-react';
 import { FcGoogle } from "react-icons/fc";
 import React from 'react';
 import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth';
@@ -19,7 +18,6 @@ const GOGOauth = () => {
         Provider.setCustomParameters({ prompt: 'select_account' });
         try {
             const resultsFromGoogle = await signInWithPopup(auth, Provider);
-            console.log(resultsFromGoogle);
             const res = await fetch('http://localhost:5000/api/google', {
                 method: 'POST',
                 headers: {
