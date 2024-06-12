@@ -164,4 +164,8 @@ const userSignout = (req, res) => {
 };
 
 
-module.exports = { userSignup, userSignin, google, userSignout };
+const ResetPassword = async (req, res) => {
+}
+
+
+module.exports = { userSignup, userSignin, google, userSignout, ResetPassword };
