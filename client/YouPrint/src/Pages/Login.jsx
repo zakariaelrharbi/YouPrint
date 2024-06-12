@@ -7,13 +7,18 @@ import SummaryApi from '../common';
 import { useDispatch, useSelector } from 'react-redux';
 import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
 import GOGOauth from '../components/GOGOauth';
+import ResetPassword from '../components/ResetPassword';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
-    const { error } = useSelector((state) => state.user); // Get loading and error states from Redux
+    const { error } = useSelector((state) => state.user);
     const dispatch = useDispatch();
+    const [showResetPassword, setShowResetPassword] = useState(false);
 
+    const handleResetPasswordClose = () => {
+        setShowResetPassword(false);
+    };
     const [data, setData] = useState({
         email: "",
         password: "",
@@ -118,11 +123,12 @@ const Login = () => {
                                 </div>
                             </div>
                             <div className="flex items-center justify-between gap-4">
-                                
                                 <div>
-                                    <a href="#" className="text-sm text-primaryGreen underline hover:opacity-90">
+                                    <Link href="#"
+                                    onClick={(e) => {setShowResetPassword(true); e.preventDefault();}}
+                                     className="text-sm text-primaryGreen underline hover:opacity-90">
                                         Mot de passe oublié ?
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -142,6 +148,7 @@ const Login = () => {
                             </Link>
                         </p>
                     </form>
+                    <ResetPassword visible={showResetPassword} onClose={handleResetPasswordClose} />
                 </div>
             </div>
         </div>

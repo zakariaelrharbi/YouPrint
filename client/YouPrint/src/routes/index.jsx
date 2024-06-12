@@ -3,7 +3,7 @@ import App from "../App";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
-import ResetPassword from "../Pages/ResetPassword";
+import ResetPassword from "../components/ResetPassword";
 
 const router = createBrowserRouter([
     {
