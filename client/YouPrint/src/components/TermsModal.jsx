@@ -1,15 +1,13 @@
 
-"use client";
 
 import { Button, Modal } from "flowbite-react";
 import { useState } from "react";
 
-export function TermsModal() {
+export function TermsModal({visible, onClose}) {
   const [openModal, setOpenModal] = useState(true);
 
   return (
     <>
-      <Button onClick={() => setOpenModal(true)}>Toggle modal</Button>
       <Modal show={openModal} onClose={() => setOpenModal(false)}>
         <Modal.Header>Terms of Service</Modal.Header>
         <Modal.Body>
