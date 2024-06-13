@@ -32,11 +32,7 @@ const Register = () => {
         }));
     };
 
-    const openModal = () => {
-        setTermsModalOpen(true);
-    };
-
-    const closeModal = () => {
+    const handleTermsClose = () => {
         setTermsModalOpen(false);
     };
 

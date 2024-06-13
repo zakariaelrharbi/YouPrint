@@ -26,8 +26,8 @@ export function TermsModal({visible, onClose}) {
         </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={() => setOpenModal(false)}>I accept</Button>
-          <Button color="gray" onClick={() => setOpenModal(false)}>
+          <Button onClick={onClose}>I accept</Button>
+          <Button color="gray" onClick={onClose}>
             Decline
           </Button>
         </Modal.Footer>
