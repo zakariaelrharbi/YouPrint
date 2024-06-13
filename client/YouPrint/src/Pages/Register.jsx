@@ -137,7 +137,7 @@ const Register = () => {
                                     </label>
                                 </div>
                                 <ReCAPTCHA
-                                    sitekey="6LcFRPUpAAAAALq44ZPeUzr6E0AMxpDhxac_1ejE"
+                                    sitekey={import.meta.env.VITE_SITE_KEY}
                                     onChange={(val)=> setCapValue(val)}
                                 />
                             </div>
