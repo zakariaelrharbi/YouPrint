@@ -129,8 +129,8 @@ const Register = () => {
                                     <label htmlFor="remember-me" className="ml-3 block text-sm">
                                         J'accepte les{" "}
                                         <Link
+                                            onClick={(e) => {setTermsModalOpen(true); e.preventDefault();}}
                                             className="text-primaryGreen font-semibold hover:underline ml-1"
-                                            onClick={openModal}
                                         >
                                         Conditions de service
                                         </Link>
@@ -158,10 +158,10 @@ const Register = () => {
                                 </Link>
                             </p>
                         </form>
+                        <TermsModal  visible={termsModalOpen} onClose={handleTermsClose}/>
                     </div>
                 </div>
             </div>
-            {termsModalOpen && <TermsModal onClose={closeModal} />}
         </div>
     );
 };
