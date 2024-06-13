@@ -4,11 +4,10 @@ import { Button, Modal } from "flowbite-react";
 import { useState } from "react";
 
 export function TermsModal({visible, onClose}) {
-  const [openModal, setOpenModal] = useState(true);
-
+  if (!visible) return null;
   return (
     <>
-      <Modal show={openModal} onClose={() => setOpenModal(false)}>
+      <Modal show={visible} onClose={onClose}>
         <Modal.Header>Terms of Service</Modal.Header>
         <Modal.Body>
           <div className="space-y-6">
