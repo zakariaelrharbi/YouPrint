@@ -34,30 +34,9 @@ const product = [
         image: img1,
         categorie: 'Card'
     },
-    {
-        image: img1,
-        categorie: 'Card'
-    },
-    {
-        image: img1,
-        categorie: 'Card'
-    },
-    {
-        image: img1,
-        categorie: 'Card'
-    },
-    {
-        image: img1,
-        categorie: 'Card'
-    },
-    {
-        image: img1,
-        categorie: 'Card'
-    },
-    {
-        image: img1,
-        categorie: 'Card'
-    },
+    
+    
+    
   
    
     

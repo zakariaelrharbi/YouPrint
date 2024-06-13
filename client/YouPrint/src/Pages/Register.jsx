@@ -66,12 +66,12 @@ const Register = () => {
         <div>
             <div className="font-[sans-serif] text-[#333] mt-24 mb-4 p-4 relative">
                 <div className="max-w-md w-full mx-auto relative z-30">
-                    <div className="border border-gray-300 bg-white rounded-md p-8">
+                    <div className="border border-gray-300 bg-white rounded-md pl-8 pr-8 pt-5 pb-5">
                         <form className="w-full" onSubmit={handleSubmit}>
                             <div className="mb-6 text-center">
                                 <h3 className="text-2xl font-extrabold">Créez votre compte</h3>
                             </div>
-                            <div className="space-y-6">
+                            <div className="space-y-5">
                                 <div>
                                     <label className="text-sm mb-1 block">Identifiant<span className='text-red-500'> *</span></label>
                                     <div className="relative flex items-center">
