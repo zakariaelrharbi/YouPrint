@@ -195,7 +195,14 @@ const ForgotPassword = async (req, res) => {
     }
 };
 
+const ResetPassword = async (req, res) => {
+    const { id, token } = req.params;
+    console.log(req.params);
+    
+    // Implement the password reset logic here if required
+};
 
 
 
-module.exports = { userSignup, userSignin, google, userSignout, ForgotPassword };
+
+module.exports = { userSignup, userSignin, google, userSignout, ForgotPassword, ResetPassword };
