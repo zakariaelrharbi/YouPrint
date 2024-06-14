@@ -34,8 +34,7 @@ const ResetPassword = ({ visible, onClose }) => {
     }
 
     try {
-      dispatch(signInStart());
-      const dataResponse = await fetch('http://localhost:5000/api/forget-password', {
+        const dataResponse = await fetch('http://localhost:5000/api/forget-password', {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -47,14 +46,11 @@ const ResetPassword = ({ visible, onClose }) => {
       const dataRes = await dataResponse.json();
 
       if (dataRes.success) {
-        dispatch(signInSuccess(dataRes));
         toast.success(dataRes.message);
       } else {
-        dispatch(signInFailure(dataRes.message));
         toast.error(dataRes.message);
       }
     } catch (error) {
-      dispatch(signInFailure(error.message));
       toast.error(error.message);
     }
   };
