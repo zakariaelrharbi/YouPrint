@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'; // Import useSelector ho
 import { Avatar, Dropdown } from "flowbite-react"; // Import Avatar and Dropdown components from flowbite-react
 import { signOutSuccess } from '../redux/user/userSlice'; // Import signOutSuccess action from userSlice
 import { toast } from 'sonner'; // Import the toast function from sonner for displaying notifications
-// import { SearchBar} from './SearchBar';
+import SearchBar from './SearchBar'; // Import the SearchBar component
 
 const Header = () => {
   const [openNavbar, setOpenNavbar] = useState(false); // State to manage the visibility of the navbar
@@ -66,9 +66,6 @@ const Header = () => {
               {/* Logo image */}
               <img src={logo} alt="YouPrint logo" className="h-[180px]" />
             </Link>
-            <div>
-              {/* <SearchBar /> */}
-            </div>
           </div>
           <div
             className={`absolute top-full lg:translate-y-0 lg:opacity-100 left-0 bg-black lg:py-0 px-5 sm:px-10 md:px-12 lg:px-0 lg:border-none w-full lg:top-0 lg:relative lg:flex lg:justify-between duration-300 lg:transition-none ease-linear
@@ -120,13 +117,16 @@ const Header = () => {
                   Contact
                 </Link>
               </li>
+              <div>
+              <SearchBar />
+            </div>
               {user ? (
                 <li className=""></li>
               ) : (
                 <li className="lg:hidden">
                   <button
                     onClick={()=>{handleCloseMenuClick('/login')}}
-                    className="relative px-60 lg:px-6 py-2.5 rounded-md font-semibold text-white duration-300 ease-linear after:absolute after:w-full after:left-0 after:bottom-0 after:h-px after:rounded-md after:origin-left after:ease-linear after:duration-300 after:scale-0 hover:after:scale-100 bg-transparent border border-primaryGreen hover:bg-primaryGreen hover:text-black"
+                    className="relative px-3 py-2 rounded-md font-semibold text-white duration-300 ease-linear  w-full bg-transparent border border-primaryGreen hover:bg-primaryGreen hover:text-b"
                   >
                     Se connecter
                   </button>
