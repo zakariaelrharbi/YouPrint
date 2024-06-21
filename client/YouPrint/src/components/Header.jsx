@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'; // Import useSelector ho
 import { Avatar, Dropdown } from "flowbite-react"; // Import Avatar and Dropdown components from flowbite-react
 import { signOutSuccess } from '../redux/user/userSlice'; // Import signOutSuccess action from userSlice
 import { toast } from 'sonner'; // Import the toast function from sonner for displaying notifications
+// import { SearchBar} from './SearchBar';
 
 const Header = () => {
   const [openNavbar, setOpenNavbar] = useState(false); // State to manage the visibility of the navbar
@@ -57,7 +58,7 @@ const Header = () => {
       {/* Header styling and layout */}
       <header className="fixed left-0 bg-black text-white top-0 w-full flex items-center h-20 border-b border-b-gray-100 z-40">
         {/* Navbar styling and layout */}
-        <nav className="relative mx-auto lg:max-w-full w-full px-5 sm:px-10 md:px-[90px] lg:px-[70px] flex gap-x-5 justify-between items-center">
+        <nav className="relative mx-auto lg:max-w-full w-full px-5 sm:px-10 md:px-[90px] lg:px-[10px] flex gap-x-5 justify-between items-center">
           {/* Container for the logo */}
           <div className="flex items-center min-w-max">
             {/* Link to the homepage */}
@@ -65,6 +66,9 @@ const Header = () => {
               {/* Logo image */}
               <img src={logo} alt="YouPrint logo" className="h-[180px]" />
             </Link>
+            <div>
+              {/* <SearchBar /> */}
+            </div>
           </div>
           <div
             className={`absolute top-full lg:translate-y-0 lg:opacity-100 left-0 bg-black lg:py-0 px-5 sm:px-10 md:px-12 lg:px-0 lg:border-none w-full lg:top-0 lg:relative lg:flex lg:justify-between duration-300 lg:transition-none ease-linear

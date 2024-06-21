@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Label, Modal, TextInput } from 'flowbite-react';
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
-import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
 
 const ResetPassword = ({ visible, onClose }) => {
-  const dispatch = useDispatch();
-  
   const [data, setData] = useState({
     email: '',
   });
@@ -20,38 +16,34 @@ const ResetPassword = ({ visible, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (!data.email) {
-      dispatch(signInFailure('Please enter your email address'));
       toast.error('Please enter your email address');
       return;
     }
 
     if (!/\S+@\S+\.\S+/.test(data.email)) {
-      dispatch(signInFailure('Please enter a valid email address'));
       toast.error('Please enter a valid email address');
       return;
     }
 
     try {
-        const dataResponse = await fetch('http://localhost:5000/api/forget-password', {
+      const response = await fetch('http://localhost:5000/api/forget-password', {
         method: 'POST',
+        crossDomain: true,
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
+          Accept: 'application/json',
+          "access-control-allow-origin": "*",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          email: data.email.trim(),
+        }),
       });
-
-      const dataRes = await dataResponse.json();
-
-      if (dataRes.success) {
-        toast.success(dataRes.message);
-      } else {
-        toast.error(dataRes.message);
-      }
+      
     } catch (error) {
-      toast.error(error.message);
+      toast.error('An error occurred while resetting the password');
+      console.error("Error during fetch:", error); // Debug log
     }
   };
 
@@ -74,7 +66,6 @@ const ResetPassword = ({ visible, onClose }) => {
               type="email"
               value={data.email}
               placeholder="nom@entreprise.com"
-              required
               onChange={handleChange}
             />
           </div>
