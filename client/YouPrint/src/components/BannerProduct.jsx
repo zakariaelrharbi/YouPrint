@@ -61,20 +61,20 @@ const BannerProduct = () => {
     , [currentImage])
 
   return (
-    <div className='container mx-auto px-4 rounded  '>
+    <div className='container mx-auto px-4 rounded  xl:mb-[180px]'>
         <div className='h-56 md:h-72 w-full bg-slate-200 relative'>
-            <div className='absolute z-10 h-full w-full md:flex items-center p-2 hidden'>
+            <div className='absolute z-10 h-full w-full xl:h-[443px] md:flex items-center p-2 hidden'>
                 <div className=' flex justify-between w-full text-2xl '>
                 <button className='bg-white shadow-md rounded-full p-1 hover:scale-105'onClick={prevImage} ><FaAngleLeft /></button>
                 <button className='bg-white shadow-md rounded-full p-1 hover:scale-105'onClick={nextImage}><FaAngleRight /></button>
                 </div>
             </div>
             {/* desktop and tablet version */}
-            <div className='hidden md:flex h-full w-full overflow-hidden '>
+            <div className='hidden md:flex h-full w-full overflow-hidden xl:h-[443px]'>
                 {
                     desktopImages.map((imageURL) => {
                         return (
-                            <div className='w-full h-full min-h-full min-w-full transition-all' key={imageURL} style={{transform : `translateX(-${currentImage * 100}%)`}}> 
+                            <div className=' min-h-full min-w-full transition-all' key={imageURL} style={{transform : `translateX(-${currentImage * 100}%)`}}> 
                                 <img src={imageURL} className='w-full h-full'/>
                             </div>
                         )

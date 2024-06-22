@@ -6,6 +6,11 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-/* header{
+/* header {
   z-index: 10001 !important;
 } */
+
+.custom-input:focus {
+  border: 2px solid #78E602;
+  /* Change border color on focus */
+}
