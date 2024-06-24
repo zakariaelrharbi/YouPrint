@@ -17,6 +17,9 @@ export default {
           200: "#888883",
         },
       },
+      boxShadow: {
+        'custom-green': '1px 1px 6px #25d366',
+      },
     },
   },
   plugins: [
