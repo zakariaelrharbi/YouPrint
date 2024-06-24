@@ -8,17 +8,3 @@ body {
 
 
 
-/* for mobile */
-@media screen and (max-width: 767px) {
-  .whatsapp-icon {
-    margin-top: 10px;
-  }
-
-  .whatsapp_float {
-    width: 40px;
-    height: 40px;
-    bottom: 20px;
-    right: 10px;
-    font-size: 22px;
-  }
-}
