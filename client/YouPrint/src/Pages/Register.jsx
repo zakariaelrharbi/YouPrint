@@ -80,7 +80,7 @@ const Register = () => {
                                             type="text"
                                             value={data.username}
                                             onChange={handleOnChange}
-                                            className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
+                                            className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen focus:ring-primaryGreen focus:border-primaryGreen"
                                             placeholder="Nom complet"
                                         />
                                         <FaUserAlt className="w-4 h-4 absolute right-4" />
@@ -94,7 +94,7 @@ const Register = () => {
                                             type="email"
                                             value={data.email}
                                             onChange={handleOnChange}
-                                            className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
+                                            className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen focus:ring-primaryGreen focus:border-primaryGreen"
                                             placeholder="nom@gmail.com"
                                         />
                                         <MdOutlineMailOutline className="w-4 h-4 absolute right-4" />
@@ -108,7 +108,7 @@ const Register = () => {
                                             onChange={handleOnChange}
                                             value={data.password}
                                             type={showPassword ? "text" : "password"}
-                                            className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen"
+                                            className="bg-white border border-gray-300 w-full text-sm px-4 py-2.5 rounded outline-primaryGreen focus:ring-primaryGreen focus:border-primaryGreen"
                                             placeholder="********"
                                         />
                                         {showPassword ? (
