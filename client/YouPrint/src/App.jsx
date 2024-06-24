@@ -12,7 +12,6 @@ const App = () => {
       <Header />
       <main>
         <Outlet />
-        <WatssapWidget />
       </main>
       <Footer />
     </>
