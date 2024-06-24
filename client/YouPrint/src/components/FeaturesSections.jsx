@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaRecycle } from "react-icons/fa";
+import { FaRecycle, FaPencilRuler, FaTruck, FaAward, FaBoxes } from "react-icons/fa";
 
 
 
