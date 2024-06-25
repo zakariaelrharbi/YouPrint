@@ -191,6 +191,16 @@ const ForgotPassword = async (req, res) => {
                 pass: process.env.PASSWORD,
             },
         });
+
+        const mailOptions = {
+            from: process.env.EMAIL,
+            to: email,
+            subject: 'Password Reset Link',
+            html: `
+                <h1>Please click on the link below to reset your password</h1>
+                <p>${process.env.CLIENT_URL}/reset-password/${token}</p>
+            `,
+        };
     } catch (error) {
         
     }
