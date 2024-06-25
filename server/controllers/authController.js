@@ -201,8 +201,26 @@ const ForgotPassword = async (req, res) => {
                 <p>${process.env.FRONTEND_URL}/reset-password/${token}</p>
             `,
         };
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return res.status(500).json({
+                    message: 'error sending email',
+                    error: true,
+                    success: false,
+                });
+            }
+            return res.status(200).json({
+                message: 'Email sent successfully',
+                error: false,
+                success: true,
+            });
+        });
     } catch (error) {
-        
+        return res.status(500).json({
+            message: 'Server error',
+            error: true,
+            success: false,
+        });
     }
     
 };
