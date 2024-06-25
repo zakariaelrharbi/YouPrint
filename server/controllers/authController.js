@@ -198,7 +198,7 @@ const ForgotPassword = async (req, res) => {
             subject: 'Password Reset Link',
             html: `
                 <h1>Please click on the link below to reset your password</h1>
-                <p>${process.env.CLIENT_URL}/reset-password/${token}</p>
+                <p>${process.env.FRONTEND_URL}/reset-password/${token}</p>
             `,
         };
     } catch (error) {
