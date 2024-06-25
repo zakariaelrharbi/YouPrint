@@ -1,6 +1,8 @@
 const User = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
+const crypto = require('crypto');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -164,9 +166,7 @@ const userSignout = (req, res) => {
 };
 
 const ForgotPassword = async (req, res) => {
-    const { email } = req.body;
-    try {
-        const user = await User.findOne
+    
 };
 
 
