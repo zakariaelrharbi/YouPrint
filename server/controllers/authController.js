@@ -162,46 +162,12 @@ const userSignout = (req, res) => {
     });
   }
 };
+
 const ForgotPassword = async (req, res) => {
     const { email } = req.body;
     try {
-        const ExistUser = await User.findOne({ email });
-        if (!ExistUser) {
-            return res.status(400).json({
-                message: 'Email not found',
-                error: true,
-                success: false,
-            });
-        }
-        const secret = process.env.JWT_SECRET + ExistUser.password;
-        const token = jwt.sign({ email: ExistUser.email, id:ExistUser._id }, secret, { expiresIn: '5m' });
-        const link = `http://localhost:3000/reset-password/${ExistUser._id}/${token}`;
-        console.log(link);
-        
-        // You need to send a response here
-        return res.status(200).json({
-            message: 'Password reset link sent',
-            link: link,  // Include the link in the response if needed
-            error: false,
-            success: true,
-        });
-
-    } catch (error) {
-        return res.status(500).json({
-            message: 'Server error',
-            error: true,
-            success: false,
-        });
-    }
+        const user = await User.findOne
 };
-
-const ResetPassword = async (req, res) => {
-    const { id, token } = req.params;
-    console.log(req.params);
-    
-    // Implement the password reset logic here if required
-};
-
 
 
 
