@@ -169,6 +169,10 @@ const ForgotPassword = async (req, res) => {
     
 };
 
+const ResetPassword = async (req, res) => {
+    
+};
+
 
 
 module.exports = { userSignup, userSignin, google, userSignout, ForgotPassword, ResetPassword };
