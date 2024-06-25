@@ -176,6 +176,21 @@ const ForgotPassword = async (req, res) => {
                 success: false,
             });
         }
+
+        const token = crypto.randomBytes(32).toString('hex');
+        const resetTokenExpiry = Date.now() + 3600000; // 1 hour before the token expires
+        user.resetLink = token;
+        user.resetTokenExpiry = new Date(resetTokenExpiry);
+        await user.save();
+
+        // Send email to user
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL,
+                pass: process.env.PASSWORD,
+            },
+        });
     } catch (error) {
         
     }
