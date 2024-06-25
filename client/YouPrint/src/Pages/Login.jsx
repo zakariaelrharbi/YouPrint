@@ -7,17 +7,17 @@ import SummaryApi from '../common';
 import { useDispatch, useSelector } from 'react-redux';
 import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
 import GOGOauth from '../components/GOGOauth';
-import ResetPassword from '../components/ResetPassword';
+import ForgotPassword from '../components/ForgotPassword';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const { error } = useSelector((state) => state.user);
     const dispatch = useDispatch();
-    const [showResetPassword, setShowResetPassword] = useState(false);
+    const [showForgotPassword, setShowForgotPassword] = useState(false);
 
-    const handleResetPasswordClose = () => {
-        setShowResetPassword(false);
+    const handleForgotPasswordClose = () => {
+        setShowForgotPassword(false);
     };
     const [data, setData] = useState({
         email: "",
@@ -125,7 +125,7 @@ const Login = () => {
                             <div className="flex items-center justify-between gap-4">
                                 <div>
                                     <Link href="#"
-                                    onClick={(e) => {setShowResetPassword(true); e.preventDefault();}}
+                                    onClick={(e) => {setShowForgotPassword(true); e.preventDefault();}}
                                      className="text-sm text-primaryGreen underline hover:opacity-90">
                                         Mot de passe oublié ?
                                     </Link>
@@ -148,7 +148,7 @@ const Login = () => {
                             </Link>
                         </p>
                     </form>
-                    <ResetPassword visible={showResetPassword} onClose={handleResetPasswordClose} />
+                    <ForgotPassword visible={showForgotPassword} onClose={handleForgotPasswordClose} />
                 </div>
             </div>
         </div>

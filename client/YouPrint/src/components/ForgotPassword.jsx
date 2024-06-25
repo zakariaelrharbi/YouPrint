@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Label, Modal, TextInput } from 'flowbite-react';
 import { toast } from 'react-toastify';
 
-const ResetPassword = ({ visible, onClose }) => {
+const ForgotPassword = ({ visible, onClose }) => {
   const [data, setData] = useState({
     email: '',
   });
@@ -78,4 +78,4 @@ const ResetPassword = ({ visible, onClose }) => {
   );
 };
 
-export default ResetPassword;
+export default ForgotPassword;
