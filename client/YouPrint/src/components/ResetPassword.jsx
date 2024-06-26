@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 
 const ResetPassword = () => {
   return (
