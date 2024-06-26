@@ -132,7 +132,7 @@ const Login = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="!mt-10">
+                        <div className="mt-5">
                             <button
                                 type="submit"
                                 className='w-full py-3 px-4 text-sm font-semibold rounded text-white bg-primaryGreen hover:opacity-90 focus:outline-none'

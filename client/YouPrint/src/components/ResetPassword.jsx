@@ -30,7 +30,7 @@ const ResetPassword = () => {
     <div>
       <section className="bg-gray-50 dark:bg-gray-900">
         <div className="flex flex-col items-center justify-center px-6 pt-[120px] pb-12 mx-auto md:h-screen lg:pt-0 lg:pb-0">
-          <div className="w-full p-6 bg-white rounded-md shadow dark:border md:mt-0 sm:max-w-md dark:bg-gray-800 dark:border-gray-700 sm:p-8">
+          <div className="w-full p-6 bg-white rounded-md  md:mt-0 sm:max-w-md border border-gray-300 sm:p-8">
             <h2 className="mb-1 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Réinitialiser votre mot de passe
             </h2>
