@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Label, Modal, TextInput } from 'flowbite-react';
 import { toast } from 'react-toastify';
+import { MdOutlineMailOutline } from "react-icons/md";
+
 
 const ForgotPassword = ({ visible, onClose }) => {
   const [data, setData] = useState({
@@ -50,27 +52,32 @@ const ForgotPassword = ({ visible, onClose }) => {
   if (!visible) return null;
 
   return (
-    <Modal show={visible} onClose={onClose}>
-      <Modal.Header>
+    <Modal show={visible} onClose={onClose} className='pt-[210px] xl:pt-0'>
+      <Modal.Header className='mb-0'>
         Réinitialiser le mot de passe
       </Modal.Header>
       <Modal.Body>
         <form onSubmit={handleSubmit} className="space-y-6 flex justify-between">
-          <div>
-            <div className="mb-2 block">
-              <Label htmlFor="email" value="Votre e-mail" />
-            </div>
-            <TextInput
-              id="email"
-              type="email"
-              value={data.email}
-              placeholder="nom@entreprise.com"
-              onChange={handleChange}
-            />
-          </div>
-          <Button type="submit">
-            Réinitialiser
-          </Button>
+            <div>
+              <label className="text-sm mb-1 block">Votre e-mail<span className='text-red-500'> *</span></label>
+                <div className="relative flex items-center">
+                  <input
+                   name="email"
+                    type="email"
+                    value={data.email}
+                    onChange={handleChange}
+                    className="bg-white border border-gray-300 w-[290px] text-sm px-3 py-2.5 rounded outline-primaryGreen focus:ring-primaryGreen focus:border-primaryGreen"
+                    placeholder="nom@gmail.com"
+                    />
+              <MdOutlineMailOutline className="w-4 h-4 absolute right-4" />
+                  </div>
+              </div>
+          <button
+            type="submit"
+            className='px-4 py-1 text-sm font-semibold rounded text-white bg-primaryGreen hover:opacity-90 focus:outline-none'
+            >
+             Se connecter
+          </button>
         </form>
       </Modal.Body>
     </Modal>
