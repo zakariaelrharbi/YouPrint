@@ -55,8 +55,7 @@ const ForgotPassword = ({ visible, onClose }) => {
         Réinitialiser le mot de passe
       </Modal.Header>
       <Modal.Body>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <h3 className="text-xl font-medium text-gray-900 dark:text-white">Réinitialiser votre mot de passe</h3>
+        <form onSubmit={handleSubmit} className="space-y-6 flex justify-between">
           <div>
             <div className="mb-2 block">
               <Label htmlFor="email" value="Votre e-mail" />
