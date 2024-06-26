@@ -52,12 +52,12 @@ const ForgotPassword = ({ visible, onClose }) => {
   if (!visible) return null;
 
   return (
-    <Modal show={visible} onClose={onClose} className='pt-[210px] xl:pt-0'>
+    <Modal show={visible} onClose={onClose} className='pt-[260px] xl:pt-0'>
       <Modal.Header className='mb-0'>
         Réinitialiser le mot de passe
       </Modal.Header>
       <Modal.Body>
-        <form onSubmit={handleSubmit} className="space-y-6 flex justify-between">
+        <form onSubmit={handleSubmit} className="space-y-6 flex gap-4">
             <div>
               <label className="text-sm mb-1 block">Votre e-mail<span className='text-red-500'> *</span></label>
                 <div className="relative flex items-center">
@@ -66,7 +66,7 @@ const ForgotPassword = ({ visible, onClose }) => {
                     type="email"
                     value={data.email}
                     onChange={handleChange}
-                    className="bg-white border border-gray-300 w-[290px] text-sm px-3 py-2.5 rounded outline-primaryGreen focus:ring-primaryGreen focus:border-primaryGreen"
+                    className="bg-white border border-gray-300 w-[210px]  text-sm px-2 py-2 rounded outline-primaryGreen focus:ring-primaryGreen focus:border-primaryGreen"
                     placeholder="nom@gmail.com"
                     />
               <MdOutlineMailOutline className="w-4 h-4 absolute right-4" />

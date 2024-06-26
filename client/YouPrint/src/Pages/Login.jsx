@@ -82,9 +82,10 @@ const Login = () => {
     }
 
     return (
-        <div className="font-[sans-serif] text-[#333] mt-24 p-4 relative mb-4">
+        <div className="font-[sans-serif] text-[#333] mt-24 p-4 relative mb-4 ">
             <div className="max-w-md w-full mx-auto relative z-30">
-                <div className="border border-gray-300 bg-white rounded-md p-8">
+                <div className="border border-gray-300 bg-white rounded-md p-6
+                ">
                     <form className="w-full" onSubmit={handleSubmit}>
                         <div className="mb-6 text-center">
                             <h3 className="text-2xl font-extrabold">Connectez-vous</h3>
