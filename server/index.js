@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const connect = require('./config/database');
 const cors = require('cors');
 const router = require('./routes/authRoutes');
+const productRouter = require('./routes/productRoutes');
 const cookieParser = require('cookie-parser');
 dotenv.config();
 
@@ -13,8 +14,15 @@ app.use(cors({
 }
 ));
 app.use(express.json());
+
+// auth routes
 app.use('/api', router);
+// product routes
+app.use('/api/products', productRouter);
+
+
 app.use(cookieParser());
+
 
 
 const PORT = process.env.SERVER_PORT || 5000;
