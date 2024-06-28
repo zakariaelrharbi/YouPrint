@@ -65,7 +65,7 @@ const ForgotPassword = ({ visible, onClose }) => {
         </Modal.Header>
         <Modal.Body >
           <div className="space-y-6">
-            <form className="space-y-4 lg:mt-5 md:space-y-5 " onSubmit={handleSubmit}>
+            <form className=" space-y-4 lg:mt-5 md:space-y-5 " onSubmit={handleSubmit}>
               <div>
                 <label className="text-sm mb-2 block">E-mail<span className='text-red-500'> *</span></label>
                   <div className="relative flex items-center">
