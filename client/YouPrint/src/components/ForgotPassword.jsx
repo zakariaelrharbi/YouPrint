@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { toast } from 'react-toastify';
 import { MdOutlineMailOutline } from "react-icons/md";
-import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
+import { Modal } from "flowbite-react";
 
 const ForgotPassword = ({ visible, onClose }) => {
   const [data, setData] = useState({
