@@ -60,7 +60,7 @@ const ForgotPassword = ({ visible, onClose }) => {
   return (
     <div>
       <Modal show={visible} onClose={onClose} initialFocus={emailInputRef} className='pt-[190px] xl:pt-0 '>
-        <Modal.Header className='xl:w-[450px]'>
+        <Modal.Header className=''>
             <h3 className="text-xl font-medium text-gray-900 ">Réinitialiser le mot de passe</h3>
         </Modal.Header>
         <Modal.Body >
@@ -75,16 +75,16 @@ const ForgotPassword = ({ visible, onClose }) => {
                   value={data.email}
                   required=""
                   onChange={handleChange}
-                  className="bg-white border border-gray-300 xl:w-[400px] w-full text-sm px-4 py-2.5 rounded outline-primaryGreen focus:ring-primaryGreen focus:border-primaryGreen"
+                  className="bg-white border border-gray-300  w-full text-sm px-4 py-2.5 rounded outline-primaryGreen focus:ring-primaryGreen focus:border-primaryGreen"
                   placeholder="nom@gmail.com"
                   ref={emailInputRef}
                   />
-                  <MdOutlineMailOutline className="w-4 h-4 absolute right-4 xl:w-[400px]" />
+                  <MdOutlineMailOutline className="w-4 h-4 absolute right-4 " />
                   </div>
               </div>
               <button
                 type="submit"
-                className="w-full xl:w-[400px] text-white bg-primaryGreen hover:opacity-90 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                className="w-full text-white bg-primaryGreen hover:opacity-90 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               >
                 Réinitialiser le mot de passe
               </button>
