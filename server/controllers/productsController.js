@@ -47,8 +47,54 @@ const getAllProduct = async (req, res) => {
 
 // Update a product
 const updateProduct = async (req, res) => {
+    const { productName, description, image, quantity, categories, size, color, price, inStock } = req.body;
+    const { id } = req.params;
 
-}
+    if (!productName || !description || !image || !quantity || !price) {
+        return res.status(400).json({
+            message: 'All required fields (productName, description, image, quantity, price) must be provided',
+            error: true,
+            success: false,
+        });
+    }
+
+    if (!id) {
+        return res.status(400).json({
+            message: 'Product ID is required',
+            error: true,
+            success: false,
+        });
+    }
+
+    try {
+        const updatedProduct = await Product.findByIdAndUpdate(
+            id,
+            { productName, description, image, quantity, categories, size, color, price, inStock },
+            { new: true, runValidators: true }
+        );
+
+        if (!updatedProduct) {
+            return res.status(404).json({
+                message: 'Product not found',
+                error: true,
+                success: false,
+            });
+        }
+
+        return res.status(200).json({
+            message: 'Product updated successfully',
+            error: false,
+            success: true,
+            data: updatedProduct,
+        });
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message,
+            error: true,
+            success: false,
+        });
+    }
+};
 
 
 module.exports = { createProduct, updateProduct, getAllProduct };
