@@ -6,6 +6,8 @@ const crypto = require('crypto');
 const dotenv = require('dotenv');
 dotenv.config();
 
+
+// Sign Up function
 const userSignup = async (req, res) => {
     const { username, email, password } = req.body;
 
@@ -48,6 +50,7 @@ const userSignup = async (req, res) => {
     }
 };
 
+// Sign In function
 const userSignin = async (req, res) => {
     const { email, password } = req.body;
 
@@ -99,6 +102,7 @@ const userSignin = async (req, res) => {
     }
 };
 
+// Google Sign In function
 const google = async (req, res) => {
     const { name, email, googlePhotoURL } = req.body;
     try {
@@ -145,7 +149,7 @@ const google = async (req, res) => {
     }
 };
 
-
+// signout function
 const userSignout = (req, res) => {
   try {
     res
@@ -165,6 +169,7 @@ const userSignout = (req, res) => {
   }
 };
 
+// Forgot Password function
 const ForgotPassword = async (req, res) => {
     const { email } = req.body;
     try {
@@ -225,6 +230,7 @@ const ForgotPassword = async (req, res) => {
     
 };
 
+// Reset Password function
 const ResetPassword = async (req, res) => {
     const { token } = req.params; // Extract token from params
     const { newPassword } = req.body;

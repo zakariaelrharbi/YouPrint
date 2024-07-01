@@ -1,6 +1,6 @@
 const Product = require('../models/productModal');
 
-
+// Create a new product
 const createProduct = async (req, res) => {
     const { productName, description, image, quantity, categories, size, color, price, inStock } = req.body;
 
@@ -12,17 +12,7 @@ const createProduct = async (req, res) => {
         });
     }
     try {
-        const newProduct = new Product({
-            productName,
-            description,
-            image,
-            quantity,
-            categories,
-            size,
-            color,
-            price,
-            inStock,
-        });
+        const newProduct = new Product({ productName, description, image, quantity, categories, size, color, price, inStock });
         await newProduct.save();
         return res.status(200).json({
             message: 'Product created successfully',
