@@ -28,4 +28,8 @@ const createProduct = async (req, res) => {
     }
 }
 
+// Update a product
+
+
+
 module.exports = { createProduct };
