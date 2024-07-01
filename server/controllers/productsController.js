@@ -29,7 +29,32 @@ const createProduct = async (req, res) => {
 }
 
 // Update a product
+const updateProduct = async (req, res) => {
+    const { productName, description, image, quantity, categories, size, color, price, inStock } = req.body;
+    const { id } = req.params;
+
+    if (!productName || !description || !image || !quantity || !price) {
+        return res.status(400).json({
+            message: 'All fields are required',
+            error: true,
+            success: false,
+        });
+    }
+    try {
+        await Product.findByIdAndUpdate(id, { productName, description, image, quantity, categories, size, color, price, inStock });
+        return res.status(200).json({
+            message: 'Product updated successfully',
+            error: false,
+            success: true,
+        });
+    } catch (error) {
+        return res.status(500).json({
+            message: error.message,
+            error: true,
+            success: false,
+        });
+    }
+}
 
 
-
-module.exports = { createProduct };
+module.exports = { createProduct, updateProduct };
