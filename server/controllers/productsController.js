@@ -45,11 +45,25 @@ const getAllProduct = async (req, res) => {
     }
 }
 // Get a single product by id
+const mongoose = require('mongoose');
+
 const getProductById = async (req, res) => {
     const product_id = req.params.id;
 
+    // Validate the product ID
+    if (!mongoose.isValidObjectId(product_id)) {
+        return res.status(400).json({
+            message: 'Invalid product ID',
+            error: true,
+            success: false,
+        });
+    }
+
     try {
+        // Find the product by ID
         const product = await Product.findById(product_id);
+        
+        // Check if the product exists
         if (!product) {
             return res.status(404).json({
                 message: 'Product not found',
@@ -58,13 +72,14 @@ const getProductById = async (req, res) => {
             });
         }
 
+        // Return the product with a success message
         return res.status(200).json({
             product,
             error: false,
             success: true,
         });
-    }
-    catch (error) {
+    } catch (error) {
+        // Handle any errors that occur during the process
         return res.status(500).json({
             message: error.message,
             error: true,
@@ -72,6 +87,7 @@ const getProductById = async (req, res) => {
         });
     }
 }
+
 
 // Update a product
 const updateProduct = async (req, res) => {
