@@ -44,6 +44,34 @@ const getAllProduct = async (req, res) => {
         });
     }
 }
+// Get a single product by id
+const getProductById = async (req, res) => {
+    const product_id = req.params.id;
+
+    try {
+        const product = await Product.findById(product_id);
+        if (!product) {
+            return res.status(404).json({
+                message: 'Product not found',
+                error: true,
+                success: false,
+            });
+        }
+
+        return res.status(200).json({
+            product,
+            error: false,
+            success: true,
+        });
+    }
+    catch (error) {
+        return res.status(500).json({
+            message: error.message,
+            error: true,
+            success: false,
+        });
+    }
+}
 
 // Update a product
 const updateProduct = async (req, res) => {
@@ -119,4 +147,5 @@ const deleteProduct = async (req, res) => {
 
 
 
-module.exports = { createProduct, updateProduct, getAllProduct, deleteProduct };
+
+module.exports = { createProduct, updateProduct, getAllProduct, deleteProduct, getProductById };
