@@ -10,7 +10,6 @@ const createCategory = async (req, res) =>{
             success: false,
         })
     }
-
     try {
         const newCategory = new Category ({categoryName, description});
         await newCategory.save();
@@ -26,6 +25,13 @@ const createCategory = async (req, res) =>{
             succwss: false,
         })
     }
+}
+
+// update category
+const updateCategory = async (req, res) =>{
+    const category_Id = req.params.id;
+    const {categoryName, description}= req.body;
+    
 }
 
 module.exports = {createCategory};
