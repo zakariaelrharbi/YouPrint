@@ -43,6 +43,33 @@ const getAllCategory = async (req, res) =>{
         })
     }
 }
+// Get a single category by id
+
+const getCategoryById = async (req, res) =>{
+    const category_Id = req.params.id;
+    try {
+        const category = await Category.findById(category_Id);
+        if (!category){
+            return res.status(404).json({
+                message: 'category not found',
+                error: true,
+                success: false,
+            })
+        }
+        return res.status(200).json({
+            category,
+            error: false,
+            success: true,
+        })
+    }
+    catch (error) {
+        return res.status(500).json({
+            message: error.message,
+            error: true,
+            success: false,
+        })
+    }
+}
 
 // update category
 const updateCategory = async (req, res) =>{
@@ -81,5 +108,5 @@ const updateCategory = async (req, res) =>{
 
 // delete category
 
-module.exports = {createCategory, getAllCategory,updateCategory};
+module.exports = {createCategory, getAllCategory, getCategoryById, updateCategory};
 
