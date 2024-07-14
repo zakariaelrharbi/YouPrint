@@ -103,7 +103,13 @@ const updateProduct = async (req, res) => {
                 success: false,
             });
         }
-
+        if (!productName || !description || !image || !quantity || !price) {
+        return res.status(400).json({
+            message: 'All fields are required',
+            error: true,
+            success: false,
+        });
+        }
         await Product.findByIdAndUpdate(product_id, {
             productName,
             description,
