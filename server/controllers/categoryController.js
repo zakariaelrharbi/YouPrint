@@ -40,6 +40,13 @@ const updateCategory = async (req, res) =>{
                 success: false,
             })
         }
+        if(!categoryName || !description){
+        return res.status(400).json({
+            message: 'All field are required',
+            error: true,
+            success: false,
+        })
+    }
         await Category.findByIdAndUpdate(category_Id, {categoryName, description});
         return res.status(200).json({
             message: 'category updated successfully',
