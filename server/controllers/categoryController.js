@@ -2,8 +2,8 @@ const Category = require('../models/categoryModal');
 
 // Create a new category
 const createCategory = async (req, res) =>{
-    const {catergoryName, description, image} = req.body;
-    if(!catergoryName || !description){
+    const {categoryName, description} = req.body;
+    if(!categoryName || !description){
         return res.status(400).json({
             message: 'All field are required',
             error: true,
@@ -12,7 +12,7 @@ const createCategory = async (req, res) =>{
     }
 
     try {
-        const newCategory = new Category ({catergoryName, description, image});
+        const newCategory = new Category ({categoryName, description});
         await newCategory.save();
         return res.status(200).json({
             message: 'category created successfully',
@@ -20,6 +20,13 @@ const createCategory = async (req, res) =>{
             success: true,
         })
     } catch (error) {
-        
+        return res.status(500).json({
+            message: error.message,
+            error: true,
+            succwss: false,
+        })
     }
 }
+
+module.exports = {createCategory};
+

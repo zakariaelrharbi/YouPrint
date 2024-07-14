@@ -2,8 +2,12 @@ const express = require('express');
 const dotenv = require("dotenv");
 const connect = require('./config/database');
 const cors = require('cors');
+// routers
 const router = require('./routes/authRoutes');
 const productRouter = require('./routes/productsRoutes');
+const categoryRouter = require('./routes/categoryRoutes');
+
+
 const cookieParser = require('cookie-parser');
 dotenv.config();
 
@@ -19,6 +23,8 @@ app.use(express.json());
 app.use('/api', router);
 // product routes
 app.use('/api', productRouter);
+// category routes
+app.use('/api', categoryRouter);
 
 
 app.use(cookieParser());
