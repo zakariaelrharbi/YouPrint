@@ -6,6 +6,7 @@ const cors = require('cors');
 const router = require('./routes/authRoutes');
 const productRouter = require('./routes/productsRoutes');
 const categoryRouter = require('./routes/categoryRoutes');
+const userRouter = require('./routes/userRoutes');
 
 
 const cookieParser = require('cookie-parser');
@@ -21,6 +22,8 @@ app.use(express.json());
 
 // auth routes
 app.use('/api', router);
+// user routes
+app.use('/api', userRouter);
 // product routes
 app.use('/api', productRouter);
 // category routes
